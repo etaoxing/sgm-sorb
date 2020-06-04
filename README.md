@@ -8,12 +8,12 @@ python run_PointEnv.py
 ```
 
 ## SoRB planning visualization
-![Search comparison](./workdirs/uvfddpg_distributional1_ensemble3_rescale5/compare_search.png)
+![Search comparison](./workdirs/uvfddpg_distributional1_ensemble3_rescale5/sorb_compare_search.png)
 
 ## State graph visualization 
 
 1. SoRB state graph
-![SoRB state graph](./workdirs/uvfddpg_distributional1_ensemble3_rescale5/state_graph_ensemble.png)
+![SoRB state graph](./workdirs/uvfddpg_distributional1_ensemble3_rescale5/sorb_state_graph_ensemble.png)
 
 2. SGM state graph
 
