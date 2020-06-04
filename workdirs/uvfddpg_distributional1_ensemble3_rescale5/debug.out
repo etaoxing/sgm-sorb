@@ -1,0 +1,812 @@
+state dim: 2, action dim: 2, max action: 1.0
+iteration = 100, opt_info = {'actor_loss': [array(11.52926, dtype=float32)], 'critic_loss': [array(2.9553435, dtype=float32)]}
+iteration = 200, opt_info = {'actor_loss': [array(12.020948, dtype=float32)], 'critic_loss': [array(2.8963976, dtype=float32)]}
+iteration = 300, opt_info = {'actor_loss': [array(12.502399, dtype=float32)], 'critic_loss': [array(2.8615525, dtype=float32)]}
+iteration = 400, opt_info = {'actor_loss': [array(13.16827, dtype=float32)], 'critic_loss': [array(2.8165512, dtype=float32)]}
+iteration = 500, opt_info = {'actor_loss': [array(13.716536, dtype=float32)], 'critic_loss': [array(2.6855123, dtype=float32)]}
+iteration = 600, opt_info = {'actor_loss': [array(14.095295, dtype=float32)], 'critic_loss': [array(2.5984685, dtype=float32)]}
+iteration = 700, opt_info = {'actor_loss': [array(14.792084, dtype=float32)], 'critic_loss': [array(2.5009625, dtype=float32)]}
+iteration = 800, opt_info = {'actor_loss': [array(14.967397, dtype=float32)], 'critic_loss': [array(2.4388905, dtype=float32)]}
+iteration = 900, opt_info = {'actor_loss': [array(15.222049, dtype=float32)], 'critic_loss': [array(2.3847344, dtype=float32)]}
+iteration = 1000, opt_info = {'actor_loss': [array(15.756983, dtype=float32)], 'critic_loss': [array(2.1973255, dtype=float32)]}
+evaluating iteration = 1000
+        set goal dist = 2
+                returns = [-20.0, -20.0, -20.0, -20.0, -2.0, -20.0, -3.0, -20.0, -20.0, -20.0]
+                predicted_dists = [13.925384, 13.643613, 13.31427, 14.091647, 13.51826, 13.661343, 13.848882, 14.270612, 13.98701, 13.21442]
+                average return = -16
+                average predicted_dist = 13.7 (0.3)
+        set goal dist = 5
+                returns = [-20.0, -20.0, -20.0, -20.0, -20.0, -6.0, -20.0, -6.0, -20.0, -20.0]
+                predicted_dists = [15.467152, 13.776101, 15.064087, 13.532093, 14.433884, 15.062077, 15.027767, 13.788135, 14.817206, 15.749116]
+                average return = -17
+                average predicted_dist = 14.7 (0.7)
+        set goal dist = 10
+                returns = [-20.0, -20.0, -20.0, -12.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0]
+                predicted_dists = [16.445856, 15.979711, 13.853623, 15.993686, 16.224401, 14.486447, 15.928119, 14.275851, 14.445468, 16.037336]
+                average return = -19
+                average predicted_dist = 15.4 (0.9)
+----------
+iteration = 1100, opt_info = {'actor_loss': [array(16.336422, dtype=float32)], 'critic_loss': [array(1.980772, dtype=float32)]}
+iteration = 1200, opt_info = {'actor_loss': [array(15.96217, dtype=float32)], 'critic_loss': [array(1.9555916, dtype=float32)]}
+iteration = 1300, opt_info = {'actor_loss': [array(16.742355, dtype=float32)], 'critic_loss': [array(1.8580589, dtype=float32)]}
+iteration = 1400, opt_info = {'actor_loss': [array(16.632536, dtype=float32)], 'critic_loss': [array(1.8294541, dtype=float32)]}
+iteration = 1500, opt_info = {'actor_loss': [array(16.778084, dtype=float32)], 'critic_loss': [array(1.7034031, dtype=float32)]}
+iteration = 1600, opt_info = {'actor_loss': [array(17.201447, dtype=float32)], 'critic_loss': [array(1.622345, dtype=float32)]}
+iteration = 1700, opt_info = {'actor_loss': [array(17.497772, dtype=float32)], 'critic_loss': [array(1.463195, dtype=float32)]}
+iteration = 1800, opt_info = {'actor_loss': [array(18.178223, dtype=float32)], 'critic_loss': [array(1.2718991, dtype=float32)]}
+iteration = 1900, opt_info = {'actor_loss': [array(18.251436, dtype=float32)], 'critic_loss': [array(1.1856428, dtype=float32)]}
+iteration = 2000, opt_info = {'actor_loss': [array(18.374086, dtype=float32)], 'critic_loss': [array(1.0937339, dtype=float32)]}
+evaluating iteration = 2000
+        set goal dist = 2
+                returns = [-20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -1.0, -20.0, -20.0, -20.0]
+                predicted_dists = [16.697067, 15.338611, 15.403992, 16.690245, 16.961227, 17.703888, 17.00879, 15.741408, 15.512132, 17.724913]
+                average return = -18
+                average predicted_dist = 16.5 (0.9)
+        set goal dist = 5
+                returns = [-20.0, -20.0, -20.0, -20.0, -20.0, -9.0, -20.0, -20.0, -20.0, -20.0]
+                predicted_dists = [16.656828, 18.19079, 17.359493, 16.435852, 18.3271, 17.882912, 18.644953, 14.274785, 15.646275, 16.797739]
+                average return = -18
+                average predicted_dist = 17.0 (1.3)
+        set goal dist = 10
+                returns = [-20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0]
+                predicted_dists = [18.402388, 16.74302, 18.009895, 17.422052, 16.519852, 17.614027, 18.11635, 18.397802, 18.779594, 18.91065]
+                average return = -20
+                average predicted_dist = 17.9 (0.8)
+----------
+iteration = 2100, opt_info = {'actor_loss': [array(18.499844, dtype=float32)], 'critic_loss': [array(1.0550578, dtype=float32)]}
+iteration = 2200, opt_info = {'actor_loss': [array(18.731426, dtype=float32)], 'critic_loss': [array(0.9614938, dtype=float32)]}
+iteration = 2300, opt_info = {'actor_loss': [array(18.75734, dtype=float32)], 'critic_loss': [array(0.9520938, dtype=float32)]}
+iteration = 2400, opt_info = {'actor_loss': [array(18.141726, dtype=float32)], 'critic_loss': [array(0.95829844, dtype=float32)]}
+iteration = 2500, opt_info = {'actor_loss': [array(18.017036, dtype=float32)], 'critic_loss': [array(0.93265915, dtype=float32)]}
+iteration = 2600, opt_info = {'actor_loss': [array(18.23658, dtype=float32)], 'critic_loss': [array(0.9411876, dtype=float32)]}
+iteration = 2700, opt_info = {'actor_loss': [array(17.84714, dtype=float32)], 'critic_loss': [array(1.0737549, dtype=float32)]}
+iteration = 2800, opt_info = {'actor_loss': [array(17.251411, dtype=float32)], 'critic_loss': [array(1.2392983, dtype=float32)]}
+iteration = 2900, opt_info = {'actor_loss': [array(17.740946, dtype=float32)], 'critic_loss': [array(1.0602611, dtype=float32)]}
+iteration = 3000, opt_info = {'actor_loss': [array(17.18439, dtype=float32)], 'critic_loss': [array(1.2172104, dtype=float32)]}
+evaluating iteration = 3000
+        set goal dist = 2
+                returns = [-3.0, -20.0, -20.0, -20.0, -20.0, -2.0, -20.0, -20.0, -20.0, -20.0]
+                predicted_dists = [16.040442, 14.650472, 15.289909, 15.818149, 13.959147, 16.492256, 17.849487, 16.2201, 17.750818, 17.624207]
+                average return = -16
+                average predicted_dist = 16.2 (1.3)
+        set goal dist = 5
+                returns = [-20.0, -20.0, -7.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0]
+                predicted_dists = [17.548035, 16.80378, 18.483473, 17.297266, 17.652765, 15.9323015, 17.301249, 18.22399, 17.238974, 17.81061]
+                average return = -18
+                average predicted_dist = 17.4 (0.7)
+        set goal dist = 10
+                returns = [-20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0]
+                predicted_dists = [16.805708, 18.544111, 18.570524, 17.055323, 17.744555, 17.411608, 18.138697, 18.712965, 18.207235, 18.489994]
+                average return = -20
+                average predicted_dist = 18.0 (0.6)
+----------
+iteration = 3100, opt_info = {'actor_loss': [array(17.254822, dtype=float32)], 'critic_loss': [array(1.1297971, dtype=float32)]}
+iteration = 3200, opt_info = {'actor_loss': [array(17.068966, dtype=float32)], 'critic_loss': [array(1.2292793, dtype=float32)]}
+iteration = 3300, opt_info = {'actor_loss': [array(17.073992, dtype=float32)], 'critic_loss': [array(1.249401, dtype=float32)]}
+iteration = 3400, opt_info = {'actor_loss': [array(17.112663, dtype=float32)], 'critic_loss': [array(1.2858356, dtype=float32)]}
+iteration = 3500, opt_info = {'actor_loss': [array(17.329775, dtype=float32)], 'critic_loss': [array(1.2404866, dtype=float32)]}
+iteration = 3600, opt_info = {'actor_loss': [array(17.519218, dtype=float32)], 'critic_loss': [array(1.2072493, dtype=float32)]}
+iteration = 3700, opt_info = {'actor_loss': [array(17.463133, dtype=float32)], 'critic_loss': [array(1.2695836, dtype=float32)]}
+iteration = 3800, opt_info = {'actor_loss': [array(17.259586, dtype=float32)], 'critic_loss': [array(1.3564868, dtype=float32)]}
+iteration = 3900, opt_info = {'actor_loss': [array(17.215248, dtype=float32)], 'critic_loss': [array(1.3042079, dtype=float32)]}
+iteration = 4000, opt_info = {'actor_loss': [array(17.7184, dtype=float32)], 'critic_loss': [array(1.2203861, dtype=float32)]}
+evaluating iteration = 4000
+        set goal dist = 2
+                returns = [-20.0, -20.0, -20.0, -20.0, -20.0, -1.0, -20.0, -20.0, -20.0, -3.0]
+                predicted_dists = [15.777698, 15.338086, 15.181412, 14.910164, 16.473038, 13.075043, 14.614011, 17.068525, 14.296224, 16.363604]
+                average return = -16
+                average predicted_dist = 15.3 (1.1)
+        set goal dist = 5
+                returns = [-7.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0]
+                predicted_dists = [18.116087, 17.787157, 17.255907, 17.872908, 17.47294, 18.086359, 17.242064, 17.510563, 17.372564, 17.897148]
+                average return = -18
+                average predicted_dist = 17.7 (0.3)
+        set goal dist = 10
+                returns = [-20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -11.0, -20.0, -20.0, -20.0]
+                predicted_dists = [18.751497, 18.109467, 18.465845, 18.534119, 18.361084, 18.069, 18.040705, 18.042278, 17.839172, 18.36148]
+                average return = -19
+                average predicted_dist = 18.3 (0.3)
+----------
+iteration = 4100, opt_info = {'actor_loss': [array(17.967953, dtype=float32)], 'critic_loss': [array(1.0957266, dtype=float32)]}
+iteration = 4200, opt_info = {'actor_loss': [array(18.219105, dtype=float32)], 'critic_loss': [array(1.1039051, dtype=float32)]}
+iteration = 4300, opt_info = {'actor_loss': [array(18.073973, dtype=float32)], 'critic_loss': [array(0.9550256, dtype=float32)]}
+iteration = 4400, opt_info = {'actor_loss': [array(17.725847, dtype=float32)], 'critic_loss': [array(1.0871617, dtype=float32)]}
+iteration = 4500, opt_info = {'actor_loss': [array(17.060062, dtype=float32)], 'critic_loss': [array(1.2349306, dtype=float32)]}
+iteration = 4600, opt_info = {'actor_loss': [array(16.91594, dtype=float32)], 'critic_loss': [array(1.30535, dtype=float32)]}
+iteration = 4700, opt_info = {'actor_loss': [array(17.549183, dtype=float32)], 'critic_loss': [array(1.2753757, dtype=float32)]}
+iteration = 4800, opt_info = {'actor_loss': [array(17.727934, dtype=float32)], 'critic_loss': [array(1.1943908, dtype=float32)]}
+iteration = 4900, opt_info = {'actor_loss': [array(17.777357, dtype=float32)], 'critic_loss': [array(1.2087263, dtype=float32)]}
+iteration = 5000, opt_info = {'actor_loss': [array(17.355509, dtype=float32)], 'critic_loss': [array(1.2198917, dtype=float32)]}
+evaluating iteration = 5000
+        set goal dist = 2
+                returns = [-20.0, -20.0, -20.0, -2.0, -2.0, -20.0, -1.0, -20.0, -20.0, -20.0]
+                predicted_dists = [15.831173, 14.473226, 14.93853, 11.778408, 15.931521, 17.358088, 16.090681, 16.567137, 17.261961, 13.243462]
+                average return = -14
+                average predicted_dist = 15.3 (1.7)
+        set goal dist = 5
+                returns = [-20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -7.0]
+                predicted_dists = [15.657219, 18.433228, 16.579628, 15.80236, 16.365519, 15.647958, 17.898926, 17.805655, 16.02807, 17.726742]
+                average return = -18
+                average predicted_dist = 16.8 (1.0)
+        set goal dist = 10
+                returns = [-20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0]
+                predicted_dists = [18.628864, 18.610336, 17.412231, 17.9917, 18.691147, 18.147, 18.997404, 18.883932, 18.28316, 17.504702]
+                average return = -20
+                average predicted_dist = 18.3 (0.5)
+----------
+iteration = 5100, opt_info = {'actor_loss': [array(17.512066, dtype=float32)], 'critic_loss': [array(1.08602, dtype=float32)]}
+iteration = 5200, opt_info = {'actor_loss': [array(17.004305, dtype=float32)], 'critic_loss': [array(1.1737126, dtype=float32)]}
+iteration = 5300, opt_info = {'actor_loss': [array(17.366833, dtype=float32)], 'critic_loss': [array(1.2394229, dtype=float32)]}
+iteration = 5400, opt_info = {'actor_loss': [array(17.087399, dtype=float32)], 'critic_loss': [array(1.1627902, dtype=float32)]}
+iteration = 5500, opt_info = {'actor_loss': [array(17.14213, dtype=float32)], 'critic_loss': [array(1.2714995, dtype=float32)]}
+iteration = 5600, opt_info = {'actor_loss': [array(17.278898, dtype=float32)], 'critic_loss': [array(1.2557344, dtype=float32)]}
+iteration = 5700, opt_info = {'actor_loss': [array(17.590479, dtype=float32)], 'critic_loss': [array(1.2072877, dtype=float32)]}
+iteration = 5800, opt_info = {'actor_loss': [array(17.557594, dtype=float32)], 'critic_loss': [array(1.2084887, dtype=float32)]}
+iteration = 5900, opt_info = {'actor_loss': [array(17.604387, dtype=float32)], 'critic_loss': [array(1.2113522, dtype=float32)]}
+iteration = 6000, opt_info = {'actor_loss': [array(16.784714, dtype=float32)], 'critic_loss': [array(1.2778932, dtype=float32)]}
+evaluating iteration = 6000
+        set goal dist = 2
+                returns = [-20.0, -20.0, -5.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -2.0]
+                predicted_dists = [16.697529, 15.8886795, 9.14267, 14.301547, 13.278011, 11.681377, 14.715604, 16.022007, 15.404091, 11.955406]
+                average return = -16
+                average predicted_dist = 13.9 (2.3)
+        set goal dist = 5
+                returns = [-20.0, -20.0, -9.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0]
+                predicted_dists = [17.057241, 16.830812, 17.13658, 17.24185, 16.572195, 17.230177, 17.2697, 16.909801, 17.286865, 17.242895]
+                average return = -18
+                average predicted_dist = 17.1 (0.2)
+        set goal dist = 10
+                returns = [-20.0, -20.0, -20.0, -20.0, -16.0, -20.0, -20.0, -20.0, -20.0, -20.0]
+                predicted_dists = [18.211502, 18.053421, 18.401617, 18.432184, 17.729263, 18.28477, 17.232538, 18.427668, 17.349104, 18.019884]
+                average return = -19
+                average predicted_dist = 18.0 (0.4)
+----------
+iteration = 6100, opt_info = {'actor_loss': [array(17.41141, dtype=float32)], 'critic_loss': [array(1.2105733, dtype=float32)]}
+iteration = 6200, opt_info = {'actor_loss': [array(17.065767, dtype=float32)], 'critic_loss': [array(1.3565651, dtype=float32)]}
+iteration = 6300, opt_info = {'actor_loss': [array(16.870087, dtype=float32)], 'critic_loss': [array(1.4172074, dtype=float32)]}
+iteration = 6400, opt_info = {'actor_loss': [array(16.994802, dtype=float32)], 'critic_loss': [array(1.4818006, dtype=float32)]}
+iteration = 6500, opt_info = {'actor_loss': [array(16.735468, dtype=float32)], 'critic_loss': [array(1.425408, dtype=float32)]}
+iteration = 6600, opt_info = {'actor_loss': [array(16.806362, dtype=float32)], 'critic_loss': [array(1.3878709, dtype=float32)]}
+iteration = 6700, opt_info = {'actor_loss': [array(16.524988, dtype=float32)], 'critic_loss': [array(1.3373147, dtype=float32)]}
+iteration = 6800, opt_info = {'actor_loss': [array(17.174915, dtype=float32)], 'critic_loss': [array(1.3535038, dtype=float32)]}
+iteration = 6900, opt_info = {'actor_loss': [array(17.383793, dtype=float32)], 'critic_loss': [array(1.2489566, dtype=float32)]}
+iteration = 7000, opt_info = {'actor_loss': [array(17.42306, dtype=float32)], 'critic_loss': [array(1.379385, dtype=float32)]}
+evaluating iteration = 7000
+        set goal dist = 2
+                returns = [-4.0, -20.0, -20.0, -20.0, -20.0, -4.0, -19.0, -3.0, -2.0, -20.0]
+                predicted_dists = [14.076218, 16.827444, 11.872044, 16.234373, 14.393798, 15.856225, 15.113315, 15.86827, 15.316134, 13.749171]
+                average return = -13
+                average predicted_dist = 14.9 (1.4)
+        set goal dist = 5
+                returns = [-20.0, -20.0, -20.0, -6.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0]
+                predicted_dists = [16.863075, 16.891281, 17.219635, 17.879042, 17.78505, 17.294714, 17.718033, 16.498598, 16.671999, 16.838778]
+                average return = -18
+                average predicted_dist = 17.2 (0.5)
+        set goal dist = 10
+                returns = [-20.0, -20.0, -20.0, -14.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0]
+                predicted_dists = [17.051704, 17.90994, 17.290907, 18.299828, 17.141104, 17.557594, 17.26351, 17.556393, 18.703484, 17.832794]
+                average return = -19
+                average predicted_dist = 17.7 (0.5)
+----------
+iteration = 7100, opt_info = {'actor_loss': [array(16.528854, dtype=float32)], 'critic_loss': [array(1.4517654, dtype=float32)]}
+iteration = 7200, opt_info = {'actor_loss': [array(16.871626, dtype=float32)], 'critic_loss': [array(1.3633608, dtype=float32)]}
+iteration = 7300, opt_info = {'actor_loss': [array(15.947702, dtype=float32)], 'critic_loss': [array(1.5617929, dtype=float32)]}
+iteration = 7400, opt_info = {'actor_loss': [array(15.961057, dtype=float32)], 'critic_loss': [array(1.576372, dtype=float32)]}
+iteration = 7500, opt_info = {'actor_loss': [array(15.79841, dtype=float32)], 'critic_loss': [array(1.613813, dtype=float32)]}
+iteration = 7600, opt_info = {'actor_loss': [array(16.959764, dtype=float32)], 'critic_loss': [array(1.429542, dtype=float32)]}
+iteration = 7700, opt_info = {'actor_loss': [array(16.208532, dtype=float32)], 'critic_loss': [array(1.5703478, dtype=float32)]}
+iteration = 7800, opt_info = {'actor_loss': [array(16.080627, dtype=float32)], 'critic_loss': [array(1.6059633, dtype=float32)]}
+iteration = 7900, opt_info = {'actor_loss': [array(16.418877, dtype=float32)], 'critic_loss': [array(1.505777, dtype=float32)]}
+iteration = 8000, opt_info = {'actor_loss': [array(16.1825, dtype=float32)], 'critic_loss': [array(1.5738546, dtype=float32)]}
+evaluating iteration = 8000
+        set goal dist = 2
+                returns = [-2.0, -2.0, -20.0, -20.0, -20.0, -2.0, -20.0, -20.0, -20.0, -20.0]
+                predicted_dists = [14.49157, 13.767488, 9.3324, 13.291016, 14.010925, 14.035702, 13.8330965, 13.555557, 14.627326, 13.529805]
+                average return = -14
+                average predicted_dist = 13.4 (1.4)
+        set goal dist = 5
+                returns = [-20.0, -9.0, -8.0, -20.0, -7.0, -20.0, -20.0, -20.0, -20.0, -20.0]
+                predicted_dists = [16.021093, 16.72406, 16.083147, 16.066252, 16.124956, 15.986613, 16.046362, 16.12086, 16.396585, 16.14829]
+                average return = -16
+                average predicted_dist = 16.2 (0.2)
+        set goal dist = 10
+                returns = [-20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -14.0, -20.0, -20.0]
+                predicted_dists = [17.891047, 17.636599, 17.210604, 17.862383, 17.165648, 17.554098, 17.729467, 18.090158, 17.64318, 17.666857]
+                average return = -19
+                average predicted_dist = 17.6 (0.3)
+----------
+iteration = 8100, opt_info = {'actor_loss': [array(16.584137, dtype=float32)], 'critic_loss': [array(1.5357714, dtype=float32)]}
+iteration = 8200, opt_info = {'actor_loss': [array(16.551458, dtype=float32)], 'critic_loss': [array(1.6568304, dtype=float32)]}
+iteration = 8300, opt_info = {'actor_loss': [array(16.228262, dtype=float32)], 'critic_loss': [array(1.5296656, dtype=float32)]}
+iteration = 8400, opt_info = {'actor_loss': [array(15.831297, dtype=float32)], 'critic_loss': [array(1.680534, dtype=float32)]}
+iteration = 8500, opt_info = {'actor_loss': [array(16.712955, dtype=float32)], 'critic_loss': [array(1.5289851, dtype=float32)]}
+iteration = 8600, opt_info = {'actor_loss': [array(16.054178, dtype=float32)], 'critic_loss': [array(1.6710325, dtype=float32)]}
+iteration = 8700, opt_info = {'actor_loss': [array(16.743185, dtype=float32)], 'critic_loss': [array(1.6031013, dtype=float32)]}
+iteration = 8800, opt_info = {'actor_loss': [array(15.7707205, dtype=float32)], 'critic_loss': [array(1.680961, dtype=float32)]}
+iteration = 8900, opt_info = {'actor_loss': [array(16.449186, dtype=float32)], 'critic_loss': [array(1.5986876, dtype=float32)]}
+iteration = 9000, opt_info = {'actor_loss': [array(16.455904, dtype=float32)], 'critic_loss': [array(1.6068627, dtype=float32)]}
+evaluating iteration = 9000
+        set goal dist = 2
+                returns = [-20.0, -20.0, -20.0, -3.0, -20.0, -20.0, -20.0, -20.0, -20.0, -5.0]
+                predicted_dists = [16.298475, 15.125554, 16.614023, 14.794389, 13.071998, 15.040668, 10.875323, 10.249966, 16.935736, 8.455032]
+                average return = -16
+                average predicted_dist = 13.7 (2.8)
+        set goal dist = 5
+                returns = [-20.0, -10.0, -20.0, -20.0, -20.0, -20.0, -11.0, -20.0, -20.0, -5.0]
+                predicted_dists = [17.029245, 15.813664, 16.879543, 16.975227, 16.556044, 16.37992, 16.137146, 17.450975, 16.54653, 15.646623]
+                average return = -16
+                average predicted_dist = 16.5 (0.5)
+        set goal dist = 10
+                returns = [-20.0, -15.0, -20.0, -16.0, -10.0, -20.0, -20.0, -19.0, -20.0, -20.0]
+                predicted_dists = [18.4862, 17.744535, 17.546911, 17.744251, 18.078766, 18.214853, 18.20826, 17.334135, 17.997124, 16.690216]
+                average return = -18
+                average predicted_dist = 17.8 (0.5)
+----------
+iteration = 9100, opt_info = {'actor_loss': [array(15.499842, dtype=float32)], 'critic_loss': [array(1.6805686, dtype=float32)]}
+iteration = 9200, opt_info = {'actor_loss': [array(16.344278, dtype=float32)], 'critic_loss': [array(1.6419619, dtype=float32)]}
+iteration = 9300, opt_info = {'actor_loss': [array(15.17499, dtype=float32)], 'critic_loss': [array(1.6259209, dtype=float32)]}
+iteration = 9400, opt_info = {'actor_loss': [array(16.243202, dtype=float32)], 'critic_loss': [array(1.6563696, dtype=float32)]}
+iteration = 9500, opt_info = {'actor_loss': [array(15.551677, dtype=float32)], 'critic_loss': [array(1.7459188, dtype=float32)]}
+iteration = 9600, opt_info = {'actor_loss': [array(15.415514, dtype=float32)], 'critic_loss': [array(1.6339062, dtype=float32)]}
+iteration = 9700, opt_info = {'actor_loss': [array(14.961499, dtype=float32)], 'critic_loss': [array(1.656949, dtype=float32)]}
+iteration = 9800, opt_info = {'actor_loss': [array(15.527054, dtype=float32)], 'critic_loss': [array(1.7179035, dtype=float32)]}
+iteration = 9900, opt_info = {'actor_loss': [array(15.695978, dtype=float32)], 'critic_loss': [array(1.6367413, dtype=float32)]}
+iteration = 10000, opt_info = {'actor_loss': [array(14.763069, dtype=float32)], 'critic_loss': [array(1.8216724, dtype=float32)]}
+evaluating iteration = 10000
+        set goal dist = 2
+                returns = [-3.0, -20.0, -3.0, -11.0, -20.0, -20.0, -20.0, -20.0, -1.0, -20.0]
+                predicted_dists = [11.7059555, 12.425944, 14.686032, 12.447429, 13.845059, 14.90675, 10.510179, 12.788043, 12.664166, 14.71625]
+                average return = -13
+                average predicted_dist = 13.1 (1.4)
+        set goal dist = 5
+                returns = [-20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0]
+                predicted_dists = [16.608604, 15.002046, 15.462387, 15.976468, 16.184021, 16.283205, 14.75224, 16.058313, 15.954562, 15.742108]
+                average return = -20
+                average predicted_dist = 15.8 (0.5)
+        set goal dist = 10
+                returns = [-20.0, -15.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0, -20.0]
+                predicted_dists = [16.286224, 16.872349, 16.821356, 16.921015, 14.795078, 16.73504, 17.97959, 14.627037, 14.943995, 16.2819]
+                average return = -19
+                average predicted_dist = 16.2 (1.0)
+----------
+iteration = 10100, opt_info = {'actor_loss': [array(14.854792, dtype=float32)], 'critic_loss': [array(1.8413867, dtype=float32)]}
+iteration = 10200, opt_info = {'actor_loss': [array(15.138496, dtype=float32)], 'critic_loss': [array(1.8912672, dtype=float32)]}
+iteration = 10300, opt_info = {'actor_loss': [array(14.764181, dtype=float32)], 'critic_loss': [array(1.93971, dtype=float32)]}
+iteration = 10400, opt_info = {'actor_loss': [array(15.596197, dtype=float32)], 'critic_loss': [array(1.8477131, dtype=float32)]}
+iteration = 10500, opt_info = {'actor_loss': [array(15.212946, dtype=float32)], 'critic_loss': [array(1.955143, dtype=float32)]}
+iteration = 10600, opt_info = {'actor_loss': [array(15.029929, dtype=float32)], 'critic_loss': [array(1.8971133, dtype=float32)]}
+iteration = 10700, opt_info = {'actor_loss': [array(14.591967, dtype=float32)], 'critic_loss': [array(1.9340147, dtype=float32)]}
+iteration = 10800, opt_info = {'actor_loss': [array(14.557299, dtype=float32)], 'critic_loss': [array(1.8164877, dtype=float32)]}
+iteration = 10900, opt_info = {'actor_loss': [array(14.741286, dtype=float32)], 'critic_loss': [array(1.859684, dtype=float32)]}
+iteration = 11000, opt_info = {'actor_loss': [array(13.841509, dtype=float32)], 'critic_loss': [array(2.0005124, dtype=float32)]}
+evaluating iteration = 11000
+        set goal dist = 2
+                returns = [-2.0, -2.0, -3.0, -3.0, -20.0, -2.0, -20.0, -5.0, -20.0, -20.0]
+                predicted_dists = [10.204717, 10.635974, 13.270261, 8.099587, 13.582905, 13.386832, 12.551837, 9.205469, 13.100906, 11.1230545]
+                average return = -9
+                average predicted_dist = 11.5 (1.8)
+        set goal dist = 5
+                returns = [-20.0, -20.0, -20.0, -20.0, -13.0, -20.0, -18.0, -13.0, -10.0, -7.0]
+                predicted_dists = [13.66009, 13.330708, 14.001518, 14.755981, 14.565066, 14.812009, 15.794033, 15.576686, 15.288796, 16.07403]
+                average return = -16
+                average predicted_dist = 14.8 (0.9)
+        set goal dist = 10
+                returns = [-20.0, -20.0, -16.0, -20.0, -16.0, -20.0, -13.0, -20.0, -15.0, -20.0]
+                predicted_dists = [16.629972, 17.425577, 17.507088, 17.31896, 16.453627, 16.60893, 18.363571, 16.635351, 15.609993, 17.470736]
+                average return = -18
+                average predicted_dist = 17.0 (0.7)
+----------
+iteration = 11100, opt_info = {'actor_loss': [array(13.482258, dtype=float32)], 'critic_loss': [array(1.9739542, dtype=float32)]}
+iteration = 11200, opt_info = {'actor_loss': [array(13.761928, dtype=float32)], 'critic_loss': [array(2.0603902, dtype=float32)]}
+iteration = 11300, opt_info = {'actor_loss': [array(12.965468, dtype=float32)], 'critic_loss': [array(2.0614235, dtype=float32)]}
+iteration = 11400, opt_info = {'actor_loss': [array(12.260046, dtype=float32)], 'critic_loss': [array(2.2814944, dtype=float32)]}
+iteration = 11500, opt_info = {'actor_loss': [array(12.391683, dtype=float32)], 'critic_loss': [array(2.278663, dtype=float32)]}
+iteration = 11600, opt_info = {'actor_loss': [array(12.842498, dtype=float32)], 'critic_loss': [array(2.0726638, dtype=float32)]}
+iteration = 11700, opt_info = {'actor_loss': [array(12.153313, dtype=float32)], 'critic_loss': [array(2.057499, dtype=float32)]}
+iteration = 11800, opt_info = {'actor_loss': [array(12.761375, dtype=float32)], 'critic_loss': [array(2.1844575, dtype=float32)]}
+iteration = 11900, opt_info = {'actor_loss': [array(11.964561, dtype=float32)], 'critic_loss': [array(2.15952, dtype=float32)]}
+iteration = 12000, opt_info = {'actor_loss': [array(13.451986, dtype=float32)], 'critic_loss': [array(2.05856, dtype=float32)]}
+evaluating iteration = 12000
+        set goal dist = 2
+                returns = [-2.0, -20.0, -7.0, -3.0, -5.0, -20.0, -8.0, -3.0, -6.0, -2.0]
+                predicted_dists = [8.763421, 9.6167555, 10.178618, 10.313797, 7.819702, 10.171004, 11.238271, 13.195659, 9.662824, 10.105511]
+                average return = -7
+                average predicted_dist = 10.1 (1.4)
+        set goal dist = 5
+                returns = [-5.0, -11.0, -15.0, -11.0, -7.0, -5.0, -11.0, -14.0, -20.0, -7.0]
+                predicted_dists = [13.523374, 15.195088, 12.908244, 13.194974, 12.10614, 13.572663, 12.595494, 13.508433, 12.6797, 12.708043]
+                average return = -10
+                average predicted_dist = 13.2 (0.8)
+        set goal dist = 10
+                returns = [-20.0, -14.0, -15.0, -20.0, -16.0, -12.0, -20.0, -13.0, -14.0, -20.0]
+                predicted_dists = [15.657107, 14.682078, 15.017932, 15.129222, 16.375713, 14.560258, 14.485595, 14.352929, 15.336186, 16.29579]
+                average return = -16
+                average predicted_dist = 15.2 (0.7)
+----------
+iteration = 12100, opt_info = {'actor_loss': [array(12.61553, dtype=float32)], 'critic_loss': [array(2.214183, dtype=float32)]}
+iteration = 12200, opt_info = {'actor_loss': [array(12.555309, dtype=float32)], 'critic_loss': [array(2.1461258, dtype=float32)]}
+iteration = 12300, opt_info = {'actor_loss': [array(12.06144, dtype=float32)], 'critic_loss': [array(2.276225, dtype=float32)]}
+iteration = 12400, opt_info = {'actor_loss': [array(13.371782, dtype=float32)], 'critic_loss': [array(2.091547, dtype=float32)]}
+iteration = 12500, opt_info = {'actor_loss': [array(13.787973, dtype=float32)], 'critic_loss': [array(2.133599, dtype=float32)]}
+iteration = 12600, opt_info = {'actor_loss': [array(11.111029, dtype=float32)], 'critic_loss': [array(2.2588212, dtype=float32)]}
+iteration = 12700, opt_info = {'actor_loss': [array(12.737942, dtype=float32)], 'critic_loss': [array(2.310522, dtype=float32)]}
+iteration = 12800, opt_info = {'actor_loss': [array(11.79777, dtype=float32)], 'critic_loss': [array(2.2251751, dtype=float32)]}
+iteration = 12900, opt_info = {'actor_loss': [array(12.097676, dtype=float32)], 'critic_loss': [array(2.417622, dtype=float32)]}
+iteration = 13000, opt_info = {'actor_loss': [array(11.535393, dtype=float32)], 'critic_loss': [array(2.355174, dtype=float32)]}
+evaluating iteration = 13000
+        set goal dist = 2
+                returns = [-3.0, -3.0, -4.0, -10.0, -2.0, -2.0, -10.0, -20.0, -9.0, -14.0]
+                predicted_dists = [8.067825, 7.466398, 9.373857, 10.322471, 11.230321, 10.2688265, 12.739291, 10.770648, 7.386196, 3.7539966]
+                average return = -7
+                average predicted_dist = 9.1 (2.4)
+        set goal dist = 5
+                returns = [-14.0, -8.0, -11.0, -9.0, -14.0, -20.0, -11.0, -11.0, -6.0, -5.0]
+                predicted_dists = [12.511761, 14.285184, 14.11132, 12.090409, 14.144116, 12.9076185, 12.832322, 12.102207, 12.650947, 12.044202]
+                average return = -10
+                average predicted_dist = 13.0 (0.8)
+        set goal dist = 10
+                returns = [-17.0, -14.0, -20.0, -13.0, -19.0, -13.0, -20.0, -18.0, -17.0, -15.0]
+                predicted_dists = [14.473315, 14.306915, 14.589027, 15.16575, 15.992381, 14.112414, 16.133207, 14.31514, 16.062412, 16.139168]
+                average return = -16
+                average predicted_dist = 15.1 (0.8)
+----------
+iteration = 13100, opt_info = {'actor_loss': [array(11.560287, dtype=float32)], 'critic_loss': [array(2.1414502, dtype=float32)]}
+iteration = 13200, opt_info = {'actor_loss': [array(11.784039, dtype=float32)], 'critic_loss': [array(2.3328073, dtype=float32)]}
+iteration = 13300, opt_info = {'actor_loss': [array(11.236482, dtype=float32)], 'critic_loss': [array(2.319278, dtype=float32)]}
+iteration = 13400, opt_info = {'actor_loss': [array(10.077963, dtype=float32)], 'critic_loss': [array(2.3046253, dtype=float32)]}
+iteration = 13500, opt_info = {'actor_loss': [array(10.204864, dtype=float32)], 'critic_loss': [array(2.337431, dtype=float32)]}
+iteration = 13600, opt_info = {'actor_loss': [array(8.787929, dtype=float32)], 'critic_loss': [array(2.4269283, dtype=float32)]}
+iteration = 13700, opt_info = {'actor_loss': [array(10.63351, dtype=float32)], 'critic_loss': [array(2.256214, dtype=float32)]}
+iteration = 13800, opt_info = {'actor_loss': [array(10.916389, dtype=float32)], 'critic_loss': [array(2.213926, dtype=float32)]}
+iteration = 13900, opt_info = {'actor_loss': [array(10.084703, dtype=float32)], 'critic_loss': [array(2.3734205, dtype=float32)]}
+iteration = 14000, opt_info = {'actor_loss': [array(10.053807, dtype=float32)], 'critic_loss': [array(2.333954, dtype=float32)]}
+evaluating iteration = 14000
+        set goal dist = 2
+                returns = [-1.0, -4.0, -4.0, -2.0, -1.0, -1.0, -3.0, -1.0, -20.0, -2.0]
+                predicted_dists = [9.5746765, 7.631039, 5.013478, 8.25381, 8.405733, 6.935095, 7.865234, 5.2820897, 5.948889, 7.572188]
+                average return = -3
+                average predicted_dist = 7.2 (1.4)
+        set goal dist = 5
+                returns = [-8.0, -13.0, -20.0, -9.0, -9.0, -5.0, -6.0, -9.0, -15.0, -7.0]
+                predicted_dists = [11.618907, 9.228207, 12.344687, 10.309064, 10.741638, 10.866328, 11.023629, 10.8552475, 10.224791, 10.385314]
+                average return = -10
+                average predicted_dist = 10.8 (0.8)
+        set goal dist = 10
+                returns = [-16.0, -14.0, -12.0, -20.0, -15.0, -17.0, -13.0, -17.0, -20.0, -12.0]
+                predicted_dists = [13.618173, 14.094554, 13.559837, 13.678706, 15.032333, 13.430566, 13.954579, 14.2711115, 14.097859, 13.970067]
+                average return = -15
+                average predicted_dist = 14.0 (0.4)
+----------
+iteration = 14100, opt_info = {'actor_loss': [array(10.635429, dtype=float32)], 'critic_loss': [array(2.30677, dtype=float32)]}
+iteration = 14200, opt_info = {'actor_loss': [array(10.747526, dtype=float32)], 'critic_loss': [array(2.2026465, dtype=float32)]}
+iteration = 14300, opt_info = {'actor_loss': [array(12.16324, dtype=float32)], 'critic_loss': [array(2.2999375, dtype=float32)]}
+iteration = 14400, opt_info = {'actor_loss': [array(9.355332, dtype=float32)], 'critic_loss': [array(2.3159714, dtype=float32)]}
+iteration = 14500, opt_info = {'actor_loss': [array(11.535556, dtype=float32)], 'critic_loss': [array(2.1950333, dtype=float32)]}
+iteration = 14600, opt_info = {'actor_loss': [array(10.686704, dtype=float32)], 'critic_loss': [array(2.1869202, dtype=float32)]}
+iteration = 14700, opt_info = {'actor_loss': [array(9.179772, dtype=float32)], 'critic_loss': [array(2.446493, dtype=float32)]}
+iteration = 14800, opt_info = {'actor_loss': [array(8.928638, dtype=float32)], 'critic_loss': [array(2.5103261, dtype=float32)]}
+iteration = 14900, opt_info = {'actor_loss': [array(9.460955, dtype=float32)], 'critic_loss': [array(2.1744368, dtype=float32)]}
+iteration = 15000, opt_info = {'actor_loss': [array(10.278896, dtype=float32)], 'critic_loss': [array(2.3373072, dtype=float32)]}
+evaluating iteration = 15000
+        set goal dist = 2
+                returns = [-1.0, -2.0, -1.0, -6.0, -1.0, -3.0, -3.0, -3.0, -4.0, -3.0]
+                predicted_dists = [6.3511086, 5.8321567, 5.5561943, 4.2990265, 3.4106643, 4.759276, 5.9287834, 10.16062, 8.841508, 7.04089]
+                average return = -2
+                average predicted_dist = 6.2 (1.9)
+        set goal dist = 5
+                returns = [-14.0, -16.0, -7.0, -14.0, -10.0, -11.0, -14.0, -13.0, -10.0, -6.0]
+                predicted_dists = [10.138085, 9.463827, 11.736382, 9.570652, 9.529649, 10.605157, 9.846641, 10.689484, 11.351741, 9.718277]
+                average return = -11
+                average predicted_dist = 10.3 (0.8)
+        set goal dist = 10
+                returns = [-13.0, -17.0, -20.0, -15.0, -15.0, -17.0, -13.0, -20.0, -13.0, -10.0]
+                predicted_dists = [13.595551, 13.391637, 12.646713, 14.090576, 14.480086, 12.654362, 11.171401, 13.971789, 12.436709, 13.673671]
+                average return = -15
+                average predicted_dist = 13.2 (0.9)
+----------
+iteration = 15100, opt_info = {'actor_loss': [array(10.525169, dtype=float32)], 'critic_loss': [array(2.338098, dtype=float32)]}
+iteration = 15200, opt_info = {'actor_loss': [array(9.237116, dtype=float32)], 'critic_loss': [array(2.2775118, dtype=float32)]}
+iteration = 15300, opt_info = {'actor_loss': [array(9.06155, dtype=float32)], 'critic_loss': [array(2.3706763, dtype=float32)]}
+iteration = 15400, opt_info = {'actor_loss': [array(8.983351, dtype=float32)], 'critic_loss': [array(2.302799, dtype=float32)]}
+iteration = 15500, opt_info = {'actor_loss': [array(9.162595, dtype=float32)], 'critic_loss': [array(2.210597, dtype=float32)]}
+iteration = 15600, opt_info = {'actor_loss': [array(8.39168, dtype=float32)], 'critic_loss': [array(2.330663, dtype=float32)]}
+iteration = 15700, opt_info = {'actor_loss': [array(9.349365, dtype=float32)], 'critic_loss': [array(2.345781, dtype=float32)]}
+iteration = 15800, opt_info = {'actor_loss': [array(9.855943, dtype=float32)], 'critic_loss': [array(2.1009624, dtype=float32)]}
+iteration = 15900, opt_info = {'actor_loss': [array(9.781341, dtype=float32)], 'critic_loss': [array(2.23998, dtype=float32)]}
+iteration = 16000, opt_info = {'actor_loss': [array(8.65285, dtype=float32)], 'critic_loss': [array(2.1622653, dtype=float32)]}
+evaluating iteration = 16000
+        set goal dist = 2
+                returns = [-2.0, -13.0, -4.0, -2.0, -8.0, -3.0, -2.0, -11.0, -3.0, -2.0]
+                predicted_dists = [6.47014, 3.7053974, 4.9389586, 7.457615, 2.583216, 2.3990157, 2.4088032, 4.8143506, 5.541101, 9.199139]
+                average return = -5
+                average predicted_dist = 5.0 (2.2)
+        set goal dist = 5
+                returns = [-8.0, -7.0, -7.0, -10.0, -9.0, -8.0, -10.0, -6.0, -7.0, -7.0]
+                predicted_dists = [11.878663, 8.280601, 9.717713, 8.405304, 11.373169, 10.681797, 9.4961195, 8.687746, 8.505693, 8.764355]
+                average return = -7
+                average predicted_dist = 9.6 (1.2)
+        set goal dist = 10
+                returns = [-20.0, -20.0, -19.0, -16.0, -20.0, -14.0, -12.0, -16.0, -20.0, -15.0]
+                predicted_dists = [14.679198, 15.27798, 15.648731, 12.09592, 10.0522995, 13.302508, 15.534294, 14.332234, 14.273987, 10.436091]
+                average return = -17
+                average predicted_dist = 13.6 (1.9)
+----------
+iteration = 16100, opt_info = {'actor_loss': [array(9.401333, dtype=float32)], 'critic_loss': [array(2.2329423, dtype=float32)]}
+iteration = 16200, opt_info = {'actor_loss': [array(9.1891365, dtype=float32)], 'critic_loss': [array(2.2512348, dtype=float32)]}
+iteration = 16300, opt_info = {'actor_loss': [array(8.304625, dtype=float32)], 'critic_loss': [array(2.350546, dtype=float32)]}
+iteration = 16400, opt_info = {'actor_loss': [array(8.974494, dtype=float32)], 'critic_loss': [array(2.191604, dtype=float32)]}
+iteration = 16500, opt_info = {'actor_loss': [array(9.467056, dtype=float32)], 'critic_loss': [array(2.3394983, dtype=float32)]}
+iteration = 16600, opt_info = {'actor_loss': [array(9.898241, dtype=float32)], 'critic_loss': [array(2.3082511, dtype=float32)]}
+iteration = 16700, opt_info = {'actor_loss': [array(9.08734, dtype=float32)], 'critic_loss': [array(2.2104876, dtype=float32)]}
+iteration = 16800, opt_info = {'actor_loss': [array(8.44311, dtype=float32)], 'critic_loss': [array(2.3573985, dtype=float32)]}
+iteration = 16900, opt_info = {'actor_loss': [array(9.630492, dtype=float32)], 'critic_loss': [array(2.334985, dtype=float32)]}
+iteration = 17000, opt_info = {'actor_loss': [array(9.051337, dtype=float32)], 'critic_loss': [array(2.2574384, dtype=float32)]}
+evaluating iteration = 17000
+        set goal dist = 2
+                returns = [-8.0, -5.0, -3.0, -1.0, -3.0, -3.0, -2.0, -2.0, -6.0, -2.0]
+                predicted_dists = [2.0279057, 3.5323505, 2.801115, 3.2592185, 4.440297, 6.8349195, 5.6172137, 5.854898, 3.6150725, 4.7862325]
+                average return = -3
+                average predicted_dist = 4.3 (1.4)
+        set goal dist = 5
+                returns = [-13.0, -10.0, -8.0, -13.0, -13.0, -14.0, -5.0, -8.0, -6.0, -9.0]
+                predicted_dists = [9.641579, 9.752804, 9.848515, 9.728543, 10.018786, 9.975182, 10.054381, 9.380391, 8.745683, 10.134218]
+                average return = -9
+                average predicted_dist = 9.7 (0.4)
+        set goal dist = 10
+                returns = [-11.0, -20.0, -20.0, -11.0, -16.0, -15.0, -17.0, -18.0, -18.0, -20.0]
+                predicted_dists = [14.142467, 11.060051, 12.11704, 11.438624, 12.483719, 11.376412, 13.83211, 12.405232, 12.376161, 11.959857]
+                average return = -16
+                average predicted_dist = 12.3 (1.0)
+----------
+iteration = 17100, opt_info = {'actor_loss': [array(8.24108, dtype=float32)], 'critic_loss': [array(2.246732, dtype=float32)]}
+iteration = 17200, opt_info = {'actor_loss': [array(9.731168, dtype=float32)], 'critic_loss': [array(2.1057832, dtype=float32)]}
+iteration = 17300, opt_info = {'actor_loss': [array(10.730301, dtype=float32)], 'critic_loss': [array(2.0872192, dtype=float32)]}
+iteration = 17400, opt_info = {'actor_loss': [array(8.398274, dtype=float32)], 'critic_loss': [array(2.200077, dtype=float32)]}
+iteration = 17500, opt_info = {'actor_loss': [array(9.3318, dtype=float32)], 'critic_loss': [array(2.1777189, dtype=float32)]}
+iteration = 17600, opt_info = {'actor_loss': [array(8.465892, dtype=float32)], 'critic_loss': [array(2.0503101, dtype=float32)]}
+iteration = 17700, opt_info = {'actor_loss': [array(9.632477, dtype=float32)], 'critic_loss': [array(2.1692483, dtype=float32)]}
+iteration = 17800, opt_info = {'actor_loss': [array(8.170601, dtype=float32)], 'critic_loss': [array(1.9583272, dtype=float32)]}
+iteration = 17900, opt_info = {'actor_loss': [array(10.321785, dtype=float32)], 'critic_loss': [array(1.8896831, dtype=float32)]}
+iteration = 18000, opt_info = {'actor_loss': [array(9.4668865, dtype=float32)], 'critic_loss': [array(1.981901, dtype=float32)]}
+evaluating iteration = 18000
+        set goal dist = 2
+                returns = [-2.0, -4.0, -4.0, -1.0, -3.0, -1.0, -5.0, -1.0, -3.0, -8.0]
+                predicted_dists = [3.2473438, 4.4669933, 5.476847, 3.1629064, 2.438616, 3.0616658, 2.4876916, 4.1616974, 4.4252295, 6.0316377]
+                average return = -3
+                average predicted_dist = 3.9 (1.2)
+        set goal dist = 5
+                returns = [-8.0, -6.0, -12.0, -10.0, -12.0, -5.0, -6.0, -9.0, -8.0, -10.0]
+                predicted_dists = [9.833854, 8.268467, 9.10936, 8.716505, 8.191482, 7.9717903, 8.171836, 8.378867, 8.607659, 8.4136915]
+                average return = -8
+                average predicted_dist = 8.6 (0.5)
+        set goal dist = 10
+                returns = [-19.0, -20.0, -18.0, -16.0, -17.0, -20.0, -15.0, -20.0, -18.0, -20.0]
+                predicted_dists = [12.3409195, 12.203479, 13.263873, 9.912256, 11.9366455, 12.321597, 11.4669075, 12.191234, 13.001782, 11.491493]
+                average return = -18
+                average predicted_dist = 12.0 (0.9)
+----------
+iteration = 18100, opt_info = {'actor_loss': [array(11.502219, dtype=float32)], 'critic_loss': [array(1.9104353, dtype=float32)]}
+iteration = 18200, opt_info = {'actor_loss': [array(9.492272, dtype=float32)], 'critic_loss': [array(1.943776, dtype=float32)]}
+iteration = 18300, opt_info = {'actor_loss': [array(9.961105, dtype=float32)], 'critic_loss': [array(2.0544038, dtype=float32)]}
+iteration = 18400, opt_info = {'actor_loss': [array(8.978205, dtype=float32)], 'critic_loss': [array(2.221205, dtype=float32)]}
+iteration = 18500, opt_info = {'actor_loss': [array(8.365446, dtype=float32)], 'critic_loss': [array(2.1070669, dtype=float32)]}
+iteration = 18600, opt_info = {'actor_loss': [array(9.301057, dtype=float32)], 'critic_loss': [array(2.1718237, dtype=float32)]}
+iteration = 18700, opt_info = {'actor_loss': [array(7.2980623, dtype=float32)], 'critic_loss': [array(2.1742628, dtype=float32)]}
+iteration = 18800, opt_info = {'actor_loss': [array(7.9266553, dtype=float32)], 'critic_loss': [array(2.0758536, dtype=float32)]}
+iteration = 18900, opt_info = {'actor_loss': [array(7.884286, dtype=float32)], 'critic_loss': [array(2.1127546, dtype=float32)]}
+iteration = 19000, opt_info = {'actor_loss': [array(7.488638, dtype=float32)], 'critic_loss': [array(2.1901085, dtype=float32)]}
+evaluating iteration = 19000
+        set goal dist = 2
+                returns = [-2.0, -1.0, -3.0, -8.0, -2.0, -6.0, -5.0, -4.0, -4.0, -2.0]
+                predicted_dists = [1.8711138, 4.4620323, 4.984257, 3.3777294, 4.363519, 4.145841, 4.572795, 6.2853127, 4.5994487, 6.8884034]
+                average return = -3
+                average predicted_dist = 4.6 (1.3)
+        set goal dist = 5
+                returns = [-9.0, -7.0, -4.0, -9.0, -5.0, -7.0, -10.0, -11.0, -12.0, -7.0]
+                predicted_dists = [9.979676, 8.004408, 8.25785, 8.243862, 8.985055, 8.516423, 7.7620964, 8.972824, 9.886237, 8.527894]
+                average return = -8
+                average predicted_dist = 8.7 (0.7)
+        set goal dist = 10
+                returns = [-19.0, -14.0, -15.0, -17.0, -14.0, -20.0, -20.0, -19.0, -13.0, -17.0]
+                predicted_dists = [12.054219, 10.737819, 12.427337, 13.685524, 10.9278555, 12.988772, 13.803996, 11.291591, 11.445903, 12.277988]
+                average return = -16
+                average predicted_dist = 12.2 (1.0)
+----------
+iteration = 19100, opt_info = {'actor_loss': [array(8.817502, dtype=float32)], 'critic_loss': [array(2.18336, dtype=float32)]}
+iteration = 19200, opt_info = {'actor_loss': [array(9.52924, dtype=float32)], 'critic_loss': [array(2.5781941, dtype=float32)]}
+iteration = 19300, opt_info = {'actor_loss': [array(9.417761, dtype=float32)], 'critic_loss': [array(2.169776, dtype=float32)]}
+iteration = 19400, opt_info = {'actor_loss': [array(10.667024, dtype=float32)], 'critic_loss': [array(2.1326306, dtype=float32)]}
+iteration = 19500, opt_info = {'actor_loss': [array(10.444894, dtype=float32)], 'critic_loss': [array(2.14868, dtype=float32)]}
+iteration = 19600, opt_info = {'actor_loss': [array(9.649491, dtype=float32)], 'critic_loss': [array(2.2335346, dtype=float32)]}
+iteration = 19700, opt_info = {'actor_loss': [array(7.551112, dtype=float32)], 'critic_loss': [array(2.1694815, dtype=float32)]}
+iteration = 19800, opt_info = {'actor_loss': [array(8.515093, dtype=float32)], 'critic_loss': [array(2.3228967, dtype=float32)]}
+iteration = 19900, opt_info = {'actor_loss': [array(8.664993, dtype=float32)], 'critic_loss': [array(1.9546822, dtype=float32)]}
+iteration = 20000, opt_info = {'actor_loss': [array(8.995918, dtype=float32)], 'critic_loss': [array(2.1629667, dtype=float32)]}
+evaluating iteration = 20000
+        set goal dist = 2
+                returns = [-3.0, -3.0, -4.0, -2.0, -2.0, -4.0, -2.0, -3.0, -6.0, -3.0]
+                predicted_dists = [5.108374, 3.8829124, 4.9784646, 6.2651515, 5.1963964, 3.2940214, 6.620832, 3.8488407, 3.383949, 4.9986215]
+                average return = -3
+                average predicted_dist = 4.8 (1.1)
+        set goal dist = 5
+                returns = [-8.0, -10.0, -8.0, -6.0, -7.0, -7.0, -6.0, -8.0, -12.0, -5.0]
+                predicted_dists = [11.191312, 8.27696, 9.677658, 6.8657455, 11.022381, 10.373201, 9.448719, 9.449162, 9.796187, 10.61661]
+                average return = -7
+                average predicted_dist = 9.7 (1.2)
+        set goal dist = 10
+                returns = [-10.0, -12.0, -14.0, -19.0, -19.0, -12.0, -14.0, -16.0, -20.0, -14.0]
+                predicted_dists = [11.753456, 13.048484, 11.947342, 13.553178, 12.510724, 12.162557, 13.878967, 11.841537, 12.85862, 12.01181]
+                average return = -15
+                average predicted_dist = 12.6 (0.7)
+----------
+iteration = 20100, opt_info = {'actor_loss': [array(10.317483, dtype=float32)], 'critic_loss': [array(2.1283827, dtype=float32)]}
+iteration = 20200, opt_info = {'actor_loss': [array(9.501388, dtype=float32)], 'critic_loss': [array(2.0615804, dtype=float32)]}
+iteration = 20300, opt_info = {'actor_loss': [array(8.161886, dtype=float32)], 'critic_loss': [array(1.9692596, dtype=float32)]}
+iteration = 20400, opt_info = {'actor_loss': [array(9.520232, dtype=float32)], 'critic_loss': [array(2.2788906, dtype=float32)]}
+iteration = 20500, opt_info = {'actor_loss': [array(9.439039, dtype=float32)], 'critic_loss': [array(2.0017407, dtype=float32)]}
+iteration = 20600, opt_info = {'actor_loss': [array(9.40457, dtype=float32)], 'critic_loss': [array(1.9277258, dtype=float32)]}
+iteration = 20700, opt_info = {'actor_loss': [array(8.406186, dtype=float32)], 'critic_loss': [array(1.9941148, dtype=float32)]}
+iteration = 20800, opt_info = {'actor_loss': [array(8.00639, dtype=float32)], 'critic_loss': [array(1.9441277, dtype=float32)]}
+iteration = 20900, opt_info = {'actor_loss': [array(7.0905743, dtype=float32)], 'critic_loss': [array(1.9954739, dtype=float32)]}
+iteration = 21000, opt_info = {'actor_loss': [array(8.426973, dtype=float32)], 'critic_loss': [array(1.9073477, dtype=float32)]}
+evaluating iteration = 21000
+        set goal dist = 2
+                returns = [-4.0, -11.0, -8.0, -3.0, -9.0, -2.0, -3.0, -2.0, -3.0, -1.0]
+                predicted_dists = [3.233386, 4.8852954, 1.6966902, 4.287882, 4.0058084, 2.8320668, 2.8228512, 4.64322, 4.3585277, 2.1848657]
+                average return = -4
+                average predicted_dist = 3.5 (1.0)
+        set goal dist = 5
+                returns = [-6.0, -5.0, -15.0, -10.0, -6.0, -4.0, -7.0, -5.0, -5.0, -10.0]
+                predicted_dists = [5.6802406, 8.193262, 7.9794593, 9.250086, 7.6296782, 7.4625053, 8.26357, 9.055078, 8.515634, 7.0899377]
+                average return = -7
+                average predicted_dist = 7.9 (1.0)
+        set goal dist = 10
+                returns = [-11.0, -11.0, -20.0, -13.0, -13.0, -17.0, -12.0, -15.0, -13.0, -16.0]
+                predicted_dists = [11.284741, 9.7052765, 10.717879, 10.907641, 12.358288, 11.815479, 12.011959, 10.758293, 12.235493, 11.3492775]
+                average return = -14
+                average predicted_dist = 11.3 (0.8)
+----------
+iteration = 21100, opt_info = {'actor_loss': [array(6.239375, dtype=float32)], 'critic_loss': [array(2.052511, dtype=float32)]}
+iteration = 21200, opt_info = {'actor_loss': [array(7.8478494, dtype=float32)], 'critic_loss': [array(1.9938055, dtype=float32)]}
+iteration = 21300, opt_info = {'actor_loss': [array(6.9113092, dtype=float32)], 'critic_loss': [array(2.147303, dtype=float32)]}
+iteration = 21400, opt_info = {'actor_loss': [array(6.3475513, dtype=float32)], 'critic_loss': [array(2.0883963, dtype=float32)]}
+iteration = 21500, opt_info = {'actor_loss': [array(6.134174, dtype=float32)], 'critic_loss': [array(1.9469203, dtype=float32)]}
+iteration = 21600, opt_info = {'actor_loss': [array(8.415168, dtype=float32)], 'critic_loss': [array(2.0253794, dtype=float32)]}
+iteration = 21700, opt_info = {'actor_loss': [array(7.3112316, dtype=float32)], 'critic_loss': [array(2.0970254, dtype=float32)]}
+iteration = 21800, opt_info = {'actor_loss': [array(7.119364, dtype=float32)], 'critic_loss': [array(1.919176, dtype=float32)]}
+iteration = 21900, opt_info = {'actor_loss': [array(6.1927667, dtype=float32)], 'critic_loss': [array(1.9454657, dtype=float32)]}
+iteration = 22000, opt_info = {'actor_loss': [array(7.1217713, dtype=float32)], 'critic_loss': [array(2.1594355, dtype=float32)]}
+evaluating iteration = 22000
+        set goal dist = 2
+                returns = [-4.0, -2.0, -3.0, -2.0, -5.0, -8.0, -1.0, -1.0, -2.0, -4.0]
+                predicted_dists = [2.7089713, 3.5823205, 2.1607678, 4.825403, 3.9979455, 1.7077413, 2.053664, 3.1432045, 4.5182724, 3.4995868]
+                average return = -3
+                average predicted_dist = 3.2 (1.0)
+        set goal dist = 5
+                returns = [-11.0, -10.0, -10.0, -6.0, -8.0, -9.0, -7.0, -12.0, -9.0, -11.0]
+                predicted_dists = [7.8316536, 6.7690043, 8.353328, 5.6712823, 9.718312, 6.040831, 6.8282533, 6.7563186, 9.041878, 8.484888]
+                average return = -9
+                average predicted_dist = 7.5 (1.3)
+        set goal dist = 10
+                returns = [-16.0, -12.0, -18.0, -14.0, -16.0, -15.0, -19.0, -10.0, -13.0, -17.0]
+                predicted_dists = [9.573684, 11.677287, 9.88437, 9.314372, 9.505618, 10.13017, 11.644067, 10.374295, 9.263188, 9.364968]
+                average return = -15
+                average predicted_dist = 10.1 (0.9)
+----------
+iteration = 22100, opt_info = {'actor_loss': [array(7.9198847, dtype=float32)], 'critic_loss': [array(2.065179, dtype=float32)]}
+iteration = 22200, opt_info = {'actor_loss': [array(6.6129446, dtype=float32)], 'critic_loss': [array(1.9734545, dtype=float32)]}
+iteration = 22300, opt_info = {'actor_loss': [array(7.1957135, dtype=float32)], 'critic_loss': [array(2.035936, dtype=float32)]}
+iteration = 22400, opt_info = {'actor_loss': [array(8.890967, dtype=float32)], 'critic_loss': [array(1.9021667, dtype=float32)]}
+iteration = 22500, opt_info = {'actor_loss': [array(7.3888264, dtype=float32)], 'critic_loss': [array(1.8828131, dtype=float32)]}
+iteration = 22600, opt_info = {'actor_loss': [array(9.074654, dtype=float32)], 'critic_loss': [array(2.1124666, dtype=float32)]}
+iteration = 22700, opt_info = {'actor_loss': [array(8.303263, dtype=float32)], 'critic_loss': [array(1.9091449, dtype=float32)]}
+iteration = 22800, opt_info = {'actor_loss': [array(9.267369, dtype=float32)], 'critic_loss': [array(1.9407035, dtype=float32)]}
+iteration = 22900, opt_info = {'actor_loss': [array(9.191293, dtype=float32)], 'critic_loss': [array(2.0825686, dtype=float32)]}
+iteration = 23000, opt_info = {'actor_loss': [array(10.08864, dtype=float32)], 'critic_loss': [array(1.9625727, dtype=float32)]}
+evaluating iteration = 23000
+        set goal dist = 2
+                returns = [-5.0, -5.0, -3.0, -3.0, -3.0, -2.0, -2.0, -7.0, -4.0, -1.0]
+                predicted_dists = [3.2900794, 3.9238653, 1.3627757, 3.743108, 2.6461964, 4.129913, 3.0976427, 2.746812, 2.3233356, 4.0114193]
+                average return = -3
+                average predicted_dist = 3.1 (0.8)
+        set goal dist = 5
+                returns = [-14.0, -6.0, -14.0, -9.0, -7.0, -19.0, -15.0, -7.0, -7.0, -8.0]
+                predicted_dists = [8.066017, 7.688767, 7.316545, 10.540839, 6.859455, 9.236604, 7.095829, 8.814944, 8.234326, 7.4614396]
+                average return = -10
+                average predicted_dist = 8.1 (1.1)
+        set goal dist = 10
+                returns = [-20.0, -20.0, -13.0, -15.0, -14.0, -12.0, -12.0, -15.0, -15.0, -19.0]
+                predicted_dists = [14.232093, 11.163994, 11.553158, 10.81279, 10.922416, 11.26895, 11.187798, 11.097665, 10.469361, 11.40397]
+                average return = -15
+                average predicted_dist = 11.4 (1.0)
+----------
+iteration = 23100, opt_info = {'actor_loss': [array(7.574425, dtype=float32)], 'critic_loss': [array(2.1031926, dtype=float32)]}
+iteration = 23200, opt_info = {'actor_loss': [array(8.5238695, dtype=float32)], 'critic_loss': [array(1.977642, dtype=float32)]}
+iteration = 23300, opt_info = {'actor_loss': [array(9.321924, dtype=float32)], 'critic_loss': [array(2.0829353, dtype=float32)]}
+iteration = 23400, opt_info = {'actor_loss': [array(10.334856, dtype=float32)], 'critic_loss': [array(2.0198267, dtype=float32)]}
+iteration = 23500, opt_info = {'actor_loss': [array(11.3586445, dtype=float32)], 'critic_loss': [array(2.0116484, dtype=float32)]}
+iteration = 23600, opt_info = {'actor_loss': [array(9.90054, dtype=float32)], 'critic_loss': [array(2.0321069, dtype=float32)]}
+iteration = 23700, opt_info = {'actor_loss': [array(9.453735, dtype=float32)], 'critic_loss': [array(2.0059316, dtype=float32)]}
+iteration = 23800, opt_info = {'actor_loss': [array(10.504174, dtype=float32)], 'critic_loss': [array(1.973409, dtype=float32)]}
+iteration = 23900, opt_info = {'actor_loss': [array(8.472263, dtype=float32)], 'critic_loss': [array(1.8746647, dtype=float32)]}
+iteration = 24000, opt_info = {'actor_loss': [array(7.9931846, dtype=float32)], 'critic_loss': [array(1.8878125, dtype=float32)]}
+evaluating iteration = 24000
+        set goal dist = 2
+                returns = [-1.0, -2.0, -2.0, -3.0, -2.0, -3.0, -2.0, -5.0, -10.0, -3.0]
+                predicted_dists = [2.2398393, 1.8238407, 4.066747, 2.3603742, 1.5856732, 1.4971949, 3.863221, 3.040097, 4.956835, 3.3231437]
+                average return = -3
+                average predicted_dist = 2.9 (1.1)
+        set goal dist = 5
+                returns = [-5.0, -7.0, -7.0, -8.0, -8.0, -11.0, -8.0, -7.0, -8.0, -13.0]
+                predicted_dists = [7.2564163, 7.839466, 7.7132325, 7.507297, 6.21195, 8.215482, 7.8178325, 7.3310227, 8.163773, 7.92675]
+                average return = -8
+                average predicted_dist = 7.6 (0.6)
+        set goal dist = 10
+                returns = [-20.0, -18.0, -17.0, -14.0, -13.0, -17.0, -19.0, -16.0, -14.0, -20.0]
+                predicted_dists = [10.733971, 9.837539, 10.097253, 10.801102, 10.953477, 11.135095, 10.231083, 10.455971, 10.831019, 10.762713]
+                average return = -16
+                average predicted_dist = 10.6 (0.4)
+----------
+iteration = 24100, opt_info = {'actor_loss': [array(8.137024, dtype=float32)], 'critic_loss': [array(2.1214545, dtype=float32)]}
+iteration = 24200, opt_info = {'actor_loss': [array(7.872225, dtype=float32)], 'critic_loss': [array(1.9661684, dtype=float32)]}
+iteration = 24300, opt_info = {'actor_loss': [array(8.35692, dtype=float32)], 'critic_loss': [array(2.1170733, dtype=float32)]}
+iteration = 24400, opt_info = {'actor_loss': [array(8.92465, dtype=float32)], 'critic_loss': [array(2.2300127, dtype=float32)]}
+iteration = 24500, opt_info = {'actor_loss': [array(8.342241, dtype=float32)], 'critic_loss': [array(2.1204357, dtype=float32)]}
+iteration = 24600, opt_info = {'actor_loss': [array(7.6907377, dtype=float32)], 'critic_loss': [array(2.0214114, dtype=float32)]}
+iteration = 24700, opt_info = {'actor_loss': [array(8.614102, dtype=float32)], 'critic_loss': [array(2.0407865, dtype=float32)]}
+iteration = 24800, opt_info = {'actor_loss': [array(9.36225, dtype=float32)], 'critic_loss': [array(1.9395609, dtype=float32)]}
+iteration = 24900, opt_info = {'actor_loss': [array(8.853397, dtype=float32)], 'critic_loss': [array(2.118341, dtype=float32)]}
+iteration = 25000, opt_info = {'actor_loss': [array(7.572246, dtype=float32)], 'critic_loss': [array(1.9707146, dtype=float32)]}
+evaluating iteration = 25000
+        set goal dist = 2
+                returns = [-7.0, -5.0, -2.0, -4.0, -1.0, -2.0, -2.0, -2.0, -2.0, -2.0]
+                predicted_dists = [3.3974962, 4.4366364, 4.2103324, 3.5219219, 2.4787598, 3.3934262, 4.2526083, 5.999958, 5.316035, 3.9092617]
+                average return = -2
+                average predicted_dist = 4.1 (1.0)
+        set goal dist = 5
+                returns = [-8.0, -9.0, -8.0, -18.0, -7.0, -6.0, -8.0, -6.0, -9.0, -7.0]
+                predicted_dists = [8.6410675, 8.157285, 6.249456, 8.77629, 8.892821, 9.366225, 9.427654, 7.341245, 8.844787, 9.740261]
+                average return = -8
+                average predicted_dist = 8.5 (1.0)
+        set goal dist = 10
+                returns = [-12.0, -17.0, -12.0, -19.0, -20.0, -12.0, -19.0, -20.0, -19.0, -13.0]
+                predicted_dists = [13.862728, 14.02395, 10.574931, 13.40965, 11.993009, 12.267041, 13.045868, 11.981656, 11.410785, 11.638797]
+                average return = -16
+                average predicted_dist = 12.4 (1.1)
+----------
+iteration = 25100, opt_info = {'actor_loss': [array(7.6064234, dtype=float32)], 'critic_loss': [array(1.9401056, dtype=float32)]}
+iteration = 25200, opt_info = {'actor_loss': [array(8.396717, dtype=float32)], 'critic_loss': [array(1.8247768, dtype=float32)]}
+iteration = 25300, opt_info = {'actor_loss': [array(8.25251, dtype=float32)], 'critic_loss': [array(2.079629, dtype=float32)]}
+iteration = 25400, opt_info = {'actor_loss': [array(6.7737136, dtype=float32)], 'critic_loss': [array(1.9730304, dtype=float32)]}
+iteration = 25500, opt_info = {'actor_loss': [array(6.9375143, dtype=float32)], 'critic_loss': [array(1.97192, dtype=float32)]}
+iteration = 25600, opt_info = {'actor_loss': [array(6.460557, dtype=float32)], 'critic_loss': [array(1.8889903, dtype=float32)]}
+iteration = 25700, opt_info = {'actor_loss': [array(7.540807, dtype=float32)], 'critic_loss': [array(2.0939333, dtype=float32)]}
+iteration = 25800, opt_info = {'actor_loss': [array(6.468114, dtype=float32)], 'critic_loss': [array(2.0751774, dtype=float32)]}
+iteration = 25900, opt_info = {'actor_loss': [array(7.467853, dtype=float32)], 'critic_loss': [array(1.9889604, dtype=float32)]}
+iteration = 26000, opt_info = {'actor_loss': [array(8.281815, dtype=float32)], 'critic_loss': [array(1.999879, dtype=float32)]}
+evaluating iteration = 26000
+        set goal dist = 2
+                returns = [-1.0, -3.0, -2.0, -3.0, -1.0, -3.0, -3.0, -6.0, -3.0, -2.0]
+                predicted_dists = [3.7505176, 4.4765954, 3.0266097, 3.2655904, 2.260856, 4.2661223, 3.4919145, 1.8214545, 3.189811, 3.890196]
+                average return = -2
+                average predicted_dist = 3.3 (0.8)
+        set goal dist = 5
+                returns = [-9.0, -7.0, -9.0, -16.0, -12.0, -5.0, -4.0, -5.0, -6.0, -8.0]
+                predicted_dists = [7.2615485, 7.6343365, 7.8351746, 7.862602, 9.170014, 6.4354935, 9.947751, 7.3925705, 5.7552204, 8.743726]
+                average return = -8
+                average predicted_dist = 7.8 (1.2)
+        set goal dist = 10
+                returns = [-20.0, -20.0, -20.0, -13.0, -18.0, -15.0, -15.0, -19.0, -18.0, -14.0]
+                predicted_dists = [12.486018, 11.894486, 11.07758, 12.7478485, 11.048877, 11.036876, 12.848001, 11.35291, 12.803721, 10.843848]
+                average return = -17
+                average predicted_dist = 11.8 (0.8)
+----------
+iteration = 26100, opt_info = {'actor_loss': [array(7.936244, dtype=float32)], 'critic_loss': [array(2.1872156, dtype=float32)]}
+iteration = 26200, opt_info = {'actor_loss': [array(7.6772604, dtype=float32)], 'critic_loss': [array(2.118602, dtype=float32)]}
+iteration = 26300, opt_info = {'actor_loss': [array(6.166607, dtype=float32)], 'critic_loss': [array(1.9836942, dtype=float32)]}
+iteration = 26400, opt_info = {'actor_loss': [array(8.527591, dtype=float32)], 'critic_loss': [array(1.9469229, dtype=float32)]}
+iteration = 26500, opt_info = {'actor_loss': [array(8.213643, dtype=float32)], 'critic_loss': [array(2.0328085, dtype=float32)]}
+iteration = 26600, opt_info = {'actor_loss': [array(7.805908, dtype=float32)], 'critic_loss': [array(2.139095, dtype=float32)]}
+iteration = 26700, opt_info = {'actor_loss': [array(7.6133895, dtype=float32)], 'critic_loss': [array(2.0290596, dtype=float32)]}
+iteration = 26800, opt_info = {'actor_loss': [array(6.8799105, dtype=float32)], 'critic_loss': [array(1.9284166, dtype=float32)]}
+iteration = 26900, opt_info = {'actor_loss': [array(7.8959427, dtype=float32)], 'critic_loss': [array(2.0635664, dtype=float32)]}
+iteration = 27000, opt_info = {'actor_loss': [array(6.6946344, dtype=float32)], 'critic_loss': [array(2.0688922, dtype=float32)]}
+evaluating iteration = 27000
+        set goal dist = 2
+                returns = [-3.0, -3.0, -5.0, -1.0, -1.0, -4.0, -2.0, -3.0, -1.0, -6.0]
+                predicted_dists = [3.2528641, 1.9591271, 4.767929, 2.2979631, 4.150428, 2.2574282, 2.6494334, 5.358866, 2.8464563, 4.278376]
+                average return = -2
+                average predicted_dist = 3.4 (1.1)
+        set goal dist = 5
+                returns = [-5.0, -6.0, -10.0, -5.0, -11.0, -6.0, -7.0, -11.0, -6.0, -13.0]
+                predicted_dists = [8.320676, 8.096435, 7.685532, 8.457589, 9.063834, 6.9981217, 8.322313, 8.757378, 7.8672166, 8.54247]
+                average return = -8
+                average predicted_dist = 8.2 (0.6)
+        set goal dist = 10
+                returns = [-13.0, -14.0, -16.0, -13.0, -10.0, -13.0, -12.0, -19.0, -20.0, -18.0]
+                predicted_dists = [11.2879, 10.333976, 12.360402, 11.849267, 13.013684, 11.627751, 11.392278, 13.05248, 14.214203, 12.191083]
+                average return = -14
+                average predicted_dist = 12.1 (1.0)
+----------
+iteration = 27100, opt_info = {'actor_loss': [array(6.961688, dtype=float32)], 'critic_loss': [array(2.0401313, dtype=float32)]}
+iteration = 27200, opt_info = {'actor_loss': [array(5.914437, dtype=float32)], 'critic_loss': [array(1.9461126, dtype=float32)]}
+iteration = 27300, opt_info = {'actor_loss': [array(6.0143127, dtype=float32)], 'critic_loss': [array(2.1812606, dtype=float32)]}
+iteration = 27400, opt_info = {'actor_loss': [array(5.8323264, dtype=float32)], 'critic_loss': [array(1.934734, dtype=float32)]}
+iteration = 27500, opt_info = {'actor_loss': [array(6.8547544, dtype=float32)], 'critic_loss': [array(1.9988352, dtype=float32)]}
+iteration = 27600, opt_info = {'actor_loss': [array(6.703836, dtype=float32)], 'critic_loss': [array(2.0362084, dtype=float32)]}
+iteration = 27700, opt_info = {'actor_loss': [array(8.4365635, dtype=float32)], 'critic_loss': [array(2.2409165, dtype=float32)]}
+iteration = 27800, opt_info = {'actor_loss': [array(6.5928245, dtype=float32)], 'critic_loss': [array(1.9801704, dtype=float32)]}
+iteration = 27900, opt_info = {'actor_loss': [array(7.7896748, dtype=float32)], 'critic_loss': [array(1.9707018, dtype=float32)]}
+iteration = 28000, opt_info = {'actor_loss': [array(8.865507, dtype=float32)], 'critic_loss': [array(1.9205365, dtype=float32)]}
+evaluating iteration = 28000
+        set goal dist = 2
+                returns = [-4.0, -2.0, -4.0, -3.0, -3.0, -2.0, -3.0, -1.0, -8.0, -2.0]
+                predicted_dists = [4.7034173, 3.533473, 2.816313, 3.9791744, 3.0290287, 1.5486718, 1.5100284, 3.6368053, 4.217921, 1.801364]
+                average return = -3
+                average predicted_dist = 3.1 (1.1)
+        set goal dist = 5
+                returns = [-6.0, -6.0, -6.0, -10.0, -6.0, -7.0, -6.0, -8.0, -5.0, -8.0]
+                predicted_dists = [10.664544, 7.438265, 6.6410365, 8.387008, 8.57351, 7.083655, 7.0651336, 6.6566105, 6.60716, 7.0330105]
+                average return = -6
+                average predicted_dist = 7.6 (1.2)
+        set goal dist = 10
+                returns = [-15.0, -13.0, -10.0, -20.0, -13.0, -15.0, -16.0, -13.0, -14.0, -17.0]
+                predicted_dists = [12.76162, 10.74617, 12.399887, 11.662879, 11.316864, 13.186794, 11.696086, 12.234024, 11.449075, 12.427879]
+                average return = -14
+                average predicted_dist = 12.0 (0.7)
+----------
+iteration = 28100, opt_info = {'actor_loss': [array(8.251182, dtype=float32)], 'critic_loss': [array(2.0745556, dtype=float32)]}
+iteration = 28200, opt_info = {'actor_loss': [array(7.2431, dtype=float32)], 'critic_loss': [array(2.2099688, dtype=float32)]}
+iteration = 28300, opt_info = {'actor_loss': [array(7.4213, dtype=float32)], 'critic_loss': [array(1.8570766, dtype=float32)]}
+iteration = 28400, opt_info = {'actor_loss': [array(7.2982893, dtype=float32)], 'critic_loss': [array(2.0073595, dtype=float32)]}
+iteration = 28500, opt_info = {'actor_loss': [array(6.917906, dtype=float32)], 'critic_loss': [array(1.9970837, dtype=float32)]}
+iteration = 28600, opt_info = {'actor_loss': [array(9.275092, dtype=float32)], 'critic_loss': [array(1.8666135, dtype=float32)]}
+iteration = 28700, opt_info = {'actor_loss': [array(9.805117, dtype=float32)], 'critic_loss': [array(2.07529, dtype=float32)]}
+iteration = 28800, opt_info = {'actor_loss': [array(10.205254, dtype=float32)], 'critic_loss': [array(1.9041371, dtype=float32)]}
+iteration = 28900, opt_info = {'actor_loss': [array(8.876306, dtype=float32)], 'critic_loss': [array(1.9493943, dtype=float32)]}
+iteration = 29000, opt_info = {'actor_loss': [array(10.349468, dtype=float32)], 'critic_loss': [array(1.96639, dtype=float32)]}
+evaluating iteration = 29000
+        set goal dist = 2
+                returns = [-2.0, -2.0, -8.0, -6.0, -3.0, -4.0, -6.0, -2.0, -4.0, -2.0]
+                predicted_dists = [3.092934, 3.1239376, 1.9492116, 2.6158628, 2.2454424, 3.7701175, 1.6814685, 3.3253212, 2.5664294, 2.1072023]
+                average return = -3
+                average predicted_dist = 2.6 (0.6)
+        set goal dist = 5
+                returns = [-4.0, -8.0, -11.0, -6.0, -6.0, -5.0, -6.0, -8.0, -11.0, -9.0]
+                predicted_dists = [9.037049, 6.9820666, 5.707109, 7.782083, 8.558681, 8.56297, 9.286979, 7.4208546, 8.046192, 8.065572]
+                average return = -7
+                average predicted_dist = 7.9 (1.0)
+        set goal dist = 10
+                returns = [-16.0, -14.0, -12.0, -19.0, -13.0, -20.0, -20.0, -14.0, -20.0, -11.0]
+                predicted_dists = [13.318821, 16.155565, 14.317571, 14.080341, 13.550801, 13.104196, 14.386752, 15.191933, 13.835668, 14.389183]
+                average return = -15
+                average predicted_dist = 14.2 (0.9)
+----------
+iteration = 29100, opt_info = {'actor_loss': [array(8.190271, dtype=float32)], 'critic_loss': [array(1.8978027, dtype=float32)]}
+iteration = 29200, opt_info = {'actor_loss': [array(8.129282, dtype=float32)], 'critic_loss': [array(1.9614123, dtype=float32)]}
+iteration = 29300, opt_info = {'actor_loss': [array(7.836025, dtype=float32)], 'critic_loss': [array(1.8337208, dtype=float32)]}
+iteration = 29400, opt_info = {'actor_loss': [array(7.4210305, dtype=float32)], 'critic_loss': [array(1.8217982, dtype=float32)]}
+iteration = 29500, opt_info = {'actor_loss': [array(8.444488, dtype=float32)], 'critic_loss': [array(1.6185552, dtype=float32)]}
+iteration = 29600, opt_info = {'actor_loss': [array(8.3231535, dtype=float32)], 'critic_loss': [array(1.7573866, dtype=float32)]}
+iteration = 29700, opt_info = {'actor_loss': [array(7.3082824, dtype=float32)], 'critic_loss': [array(2.0003796, dtype=float32)]}
+iteration = 29800, opt_info = {'actor_loss': [array(6.9366755, dtype=float32)], 'critic_loss': [array(2.0467417, dtype=float32)]}
+iteration = 29900, opt_info = {'actor_loss': [array(7.450177, dtype=float32)], 'critic_loss': [array(1.8582553, dtype=float32)]}
+iteration = 30000, opt_info = {'actor_loss': [array(6.357788, dtype=float32)], 'critic_loss': [array(1.884833, dtype=float32)]}
+evaluating iteration = 30000
+        set goal dist = 2
+                returns = [-3.0, -2.0, -1.0, -3.0, -1.0, -1.0, -2.0, -13.0, -4.0, -4.0]
+                predicted_dists = [4.4804745, 4.1964087, 3.5619833, 2.2807496, 4.3978066, 3.2016513, 3.7415864, 4.535374, 3.0984325, 4.720751]
+                average return = -3
+                average predicted_dist = 3.8 (0.7)
+        set goal dist = 5
+                returns = [-8.0, -8.0, -13.0, -6.0, -10.0, -6.0, -6.0, -9.0, -10.0, -7.0]
+                predicted_dists = [10.514091, 9.369169, 10.956252, 7.546833, 7.7899327, 8.669872, 8.132283, 7.5704627, 6.5807095, 9.048343]
+                average return = -8
+                average predicted_dist = 8.6 (1.3)
+        set goal dist = 10
+                returns = [-20.0, -18.0, -20.0, -14.0, -14.0, -17.0, -17.0, -20.0, -15.0, -14.0]
+                predicted_dists = [12.755459, 11.103791, 11.983943, 13.436444, 11.12032, 12.587243, 15.334067, 14.014117, 14.144714, 13.176946]
+                average return = -16
+                average predicted_dist = 13.0 (1.3)
+----------
+
