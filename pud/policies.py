@@ -117,7 +117,7 @@ class SearchPolicy(BasePolicy):
             np.expand_dims(obs_to_rb_dist, 2),
             np.expand_dims(self.rb_distances, 0),
             np.expand_dims(np.transpose(rb_to_goal_dist), 1)
-        ])
+        ]) # elementwise sum
 
         # We assume a batch size of 1.
         min_search_dist = np.min(search_dist)

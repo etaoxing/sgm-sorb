@@ -1,5 +1,6 @@
 from pud.dependencies import *
 
+# https://www.tensorflow.org/api_docs/python/tf/keras/initializers/VarianceScaling
 def variance_initializer_(tensor, scale=1.0, mode='fan_in', distribution='uniform'):
     fan_in, fan_out = nn.init._calculate_fan_in_and_fan_out(tensor)
     if mode == "fan_in":

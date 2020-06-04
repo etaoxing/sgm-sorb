@@ -43,9 +43,8 @@ def eval_agent(agent, eval_env, num_evals=10, eval_distances=[2, 5, 10]):
             states['goal'].append(state['goal'])
         pred_dist = list(agent.get_dist_to_goal(states))
 
-        print('\tset goal dist = %d' % dist)
-        print('\t\treturns = {}'.format(returns))
-        print('\t\tpredicted_dists = {}'.format(pred_dist))
-        print('\t\taverage return = %d' % np.mean(returns))
-        print('\t\taverage predicted_dist = %.1f (%.1f)' %
-                                  (np.mean(pred_dist), np.std(pred_dist)))
+        print(f'\tset goal dist = {dist}')
+        print(f'\t\treturns = {returns}')
+        print(f'\t\tpredicted_dists = {pred_dist}')
+        print(f'\t\taverage return = {np.mean(returns)}')
+        print(f'\t\taverage predicted_dist = {np.mean(pred_dist):.1f} ({np.std(pred_dist):.2f})')

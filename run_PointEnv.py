@@ -43,6 +43,8 @@ agent = UVFDDPG(
     tau=0.05,
 )
 
+print(agent)
+
 from pud.buffer import ReplayBuffer
 replay_buffer = ReplayBuffer(state_dim, action_dim, max_size=1000)
 
