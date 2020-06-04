@@ -1,4 +1,54 @@
 state dim: 2, action dim: 2, max action: 1.0
+UVFDDPG(
+  (actor): GoalConditionedActor(
+    (l1): Linear(in_features=4, out_features=256, bias=True)
+    (l2): Linear(in_features=256, out_features=256, bias=True)
+    (l3): Linear(in_features=256, out_features=2, bias=True)
+  )
+  (actor_target): GoalConditionedActor(
+    (l1): Linear(in_features=4, out_features=256, bias=True)
+    (l2): Linear(in_features=256, out_features=256, bias=True)
+    (l3): Linear(in_features=256, out_features=2, bias=True)
+  )
+  (critic): EnsembledCritic(
+    (critics): ModuleList(
+      (0): GoalConditionedCritic(
+        (l1): Linear(in_features=4, out_features=256, bias=True)
+        (l2): Linear(in_features=258, out_features=256, bias=True)
+        (l3): Linear(in_features=256, out_features=20, bias=True)
+      )
+      (1): GoalConditionedCritic(
+        (l1): Linear(in_features=4, out_features=256, bias=True)
+        (l2): Linear(in_features=258, out_features=256, bias=True)
+        (l3): Linear(in_features=256, out_features=20, bias=True)
+      )
+      (2): GoalConditionedCritic(
+        (l1): Linear(in_features=4, out_features=256, bias=True)
+        (l2): Linear(in_features=258, out_features=256, bias=True)
+        (l3): Linear(in_features=256, out_features=20, bias=True)
+      )
+    )
+  )
+  (critic_target): EnsembledCritic(
+    (critics): ModuleList(
+      (0): GoalConditionedCritic(
+        (l1): Linear(in_features=4, out_features=256, bias=True)
+        (l2): Linear(in_features=258, out_features=256, bias=True)
+        (l3): Linear(in_features=256, out_features=20, bias=True)
+      )
+      (1): GoalConditionedCritic(
+        (l1): Linear(in_features=4, out_features=256, bias=True)
+        (l2): Linear(in_features=258, out_features=256, bias=True)
+        (l3): Linear(in_features=256, out_features=20, bias=True)
+      )
+      (2): GoalConditionedCritic(
+        (l1): Linear(in_features=4, out_features=256, bias=True)
+        (l2): Linear(in_features=258, out_features=256, bias=True)
+        (l3): Linear(in_features=256, out_features=20, bias=True)
+      )
+    )
+  )
+)
 iteration = 100, opt_info = {'actor_loss': [array(11.52926, dtype=float32)], 'critic_loss': [array(2.9553435, dtype=float32)]}
 iteration = 200, opt_info = {'actor_loss': [array(12.020948, dtype=float32)], 'critic_loss': [array(2.8963976, dtype=float32)]}
 iteration = 300, opt_info = {'actor_loss': [array(12.502399, dtype=float32)], 'critic_loss': [array(2.8615525, dtype=float32)]}
