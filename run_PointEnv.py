@@ -25,14 +25,14 @@ eval_env = env_load_fn(env_name, max_episode_steps,
 set_env_seed(eval_env, seed + 2)
 
 from pud.ddpg import UVFDDPG
-state_dim = env.observation_space['observation'].shape[0] # concatenating goal
+state_dim = env.observation_space['observation'].shape[0]
 action_dim = env.action_space.shape[0]
 max_action = float(env.action_space.high[0])
 
 print(f'state dim: {state_dim}, action dim: {action_dim}, max action: {max_action}')
 
 agent = UVFDDPG(
-    int(2 * state_dim),
+    int(2 * state_dim), # concatenating obs and goal
     action_dim,
     max_action,
     discount=1,
@@ -52,14 +52,14 @@ if False:
     from pud.runner import train_eval
     
     train_eval(agent,
-            replay_buffer,
-            env,
-            eval_env,
-            initial_collect_steps=1000,
-            eval_interval=1000,
-            num_eval_episodes=10,
-            num_iterations=30000,
-            )
+               replay_buffer,
+               env,
+               eval_env,
+               initial_collect_steps=1000,
+               eval_interval=1000,
+               num_eval_episodes=10,
+               num_iterations=30000,
+              )
     torch.save(agent.state_dict(), 'agent.pth')
 elif True:
     ckpt_file = os.path.join('workdirs', 'uvfddpg_distributional1_ensemble3_rescale5', 'agent.pth')
@@ -117,7 +117,8 @@ elif True:
     # visualize_graph_ensemble(rb_vec, eval_env, pdist)
 
     from pud.policies import SearchPolicy
-    search_policy = SearchPolicy(agent, rb_vec, pdist, open_loop=False)
+    search_policy = SearchPolicy(agent, rb_vec, pdist, open_loop=True)
+    eval_env.duration = 300 # We'll give the agent lots of time to try to find the goal.
 
     # Plot the search path found by the search policy
     # 
@@ -131,5 +132,4 @@ elif True:
     # distance to the goal. Note that only the search policy is able to reach distant goals.
     #
     from pud.visualize import visualize_compare_search
-    eval_env.duration = 300 # We'll give the agent lots of time to try to find the goal.
     visualize_compare_search(agent, search_policy, eval_env, difficulty=0.9)

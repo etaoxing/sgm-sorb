@@ -26,6 +26,7 @@ class TimeLimit(gym.Wrapper):
     def reset(self):
         self.step_count = 0
         observation = self.env.reset()
+        observation['first_step'] = True
         return observation
 
     def step(self, action):
@@ -41,4 +42,3 @@ class TimeLimit(gym.Wrapper):
             observation = self.reset()
 
         return observation, reward, done, info
-

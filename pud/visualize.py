@@ -21,7 +21,7 @@ def visualize_trajectory(agent, eval_env, difficulty=0.5):
         goal, observations_list, _, _ = Collector.get_trajectory(agent, eval_env)
         obs_vec = np.array(observations_list)
 
-        print('traj {}, num steps: {}'.format(col_index, len(obs_vec)))
+        print(f'traj {col_index}, num steps: {len(obs_vec)}')
 
         plt.plot(obs_vec[:, 0], obs_vec[:, 1], 'b-o', alpha=0.3)
         plt.scatter([obs_vec[0, 0]], [obs_vec[0, 1]], marker='+',
@@ -84,7 +84,12 @@ def visualize_search_path(search_policy, eval_env, difficulty=0.5):
     set_env_difficulty(eval_env, difficulty)
 
     if search_policy.open_loop:
-        raise NotImplementedError
+        state = eval_env.reset()
+        start = state['observation']
+        goal = state['goal']
+
+        search_policy.select_action(state)
+        waypoints = search_policy.get_waypoints()
     else:
         goal, observations, waypoints, _ = Collector.get_trajectory(search_policy, eval_env)
         start = observations[0]
@@ -121,15 +126,12 @@ def visualize_compare_search(agent, search_policy, eval_env, difficulty=0.5, see
         set_global_seed(seed)
         set_env_seed(eval_env, seed + 1)
 
-        if search_policy.open_loop and use_search:
-            raise NotImplementedError
+        if use_search:
+            policy = search_policy
         else:
-            if use_search:
-                policy = search_policy
-            else:
-                policy = agent
-            goal, observations, waypoints, _ = Collector.get_trajectory(policy, eval_env)
-            start = observations[0]
+            policy = agent
+        goal, observations, waypoints, _ = Collector.get_trajectory(policy, eval_env)
+        start = observations[0]
 
         obs_vec = np.array(observations)
         waypoint_vec = np.array(waypoints)

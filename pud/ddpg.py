@@ -325,7 +325,6 @@ class UVFDDPG(DDPG):
                 # Fist column: Since episode didn't terminate, probability that the
                 # distance is 1 equals 0.
                 col_1 = torch.zeros((batch_size, 1))
-
                 # Middle columns: Simply the shifted probabilities.
                 col_middle = target_q_probs[:, :-2]
                 # Last column: Probability of taking at least n steps is sum of
@@ -351,19 +350,19 @@ class UVFDDPG(DDPG):
             q_values = self.get_q_values(state, **kwargs)
             return -1.0 * q_values.cpu().detach().numpy().squeeze(-1)
 
-    def get_pairwise_dist(self, obs_vec, goal_vec=None, max_search_steps=7, masked=False, aggregate='mean'):
+    def get_pairwise_dist(self, obs_vec, goal_vec=None, aggregate='mean', max_search_steps=7, masked=False):
         """Estimates the pairwise distances.
 
           obs_vec: Array containing observations
           goal_vec: (optional) Array containing a second set of observations. If
                     not specified, computes the pairwise distances between obs_tensor and
                     itself.
-          max_search_steps: (int)
-          masked: (bool) Whether to ignore edges that are too long, as defined by
-                  max_search_steps.
           aggregate: (str) How to combine the predictions from the ensemble. Options
                      are to take the minimum predicted q value (i.e., the maximum distance),
                      the mean, or to simply return all the predictions.
+          max_search_steps: (int)
+          masked: (bool) Whether to ignore edges that are too long, as defined by
+                  max_search_steps.
         """
         if goal_vec is None:
             goal_vec = obs_vec
