@@ -7,7 +7,9 @@ pip install -e .
 python run_PointEnv.py
 ```
 
-## SoRB planning visualization (closed loop)
+## Results
+
+### SoRB (closed loop) planning visualization
 ![Search comparison](./workdirs/uvfddpg_distributional1_ensemble3_rescale5/sorb_compare_search_openloop0.png)
 
 ```
@@ -22,7 +24,7 @@ goal: [0.81310241 0.028764  ]
 steps: 127
 ```
 
-## SoRB planning visualization (open loop)
+### SoRB (open loop) planning visualization
 ![Search comparison](./workdirs/uvfddpg_distributional1_ensemble3_rescale5/sorb_compare_search_openloop1.png)
 
 ```
@@ -37,7 +39,7 @@ goal: [0.81310241 0.028764  ]
 steps: 111
 ```
 
-## State graph visualization 
+### State graph visualization 
 
 1. SoRB state graph
 ![SoRB state graph](./workdirs/uvfddpg_distributional1_ensemble3_rescale5/sorb_state_graph_ensemble.png)
