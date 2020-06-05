@@ -100,7 +100,7 @@ class SearchPolicy(BasePolicy):
                                                         masked=True)
         return start_to_rb_dist, rb_to_goal_dist
 
-    def get_waypoint(self, state):
+    def get_closest_waypoint(self, state):
         """
         For closed loop replanning at each step. Uses the precomputed distances
         `rb_distances` b/w states in `rb_vec`
@@ -215,7 +215,7 @@ class SearchPolicy(BasePolicy):
             dist_to_goal_via_waypoint = dist_to_waypoint + self.waypoint_to_goal_dist_vec[self.waypoint_counter]
         else:
             # closed loop, replan waypoint at each step
-            waypoint, dist_to_goal_via_waypoint = self.get_waypoint(state)
+            waypoint, dist_to_goal_via_waypoint = self.get_closest_waypoint(state)
 
         if (self.no_waypoint_hopping and not self.reached_final_waypoint) or \
            (dist_to_goal_via_waypoint < dist_to_goal) or \

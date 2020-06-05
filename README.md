@@ -9,7 +9,7 @@ python run_PointEnv.py
 
 ## Results
 
-### SoRB (closed loop) planning visualization
+### SoRB (re-planning with closest waypoint) trajectory visualization
 ![Search comparison](./workdirs/uvfddpg_distributional1_ensemble3_rescale5/sorb_compare_search_openloop0.png)
 
 ```
@@ -24,7 +24,7 @@ goal: [0.81310241 0.028764  ]
 steps: 127
 ```
 
-### SoRB (open loop) planning visualization
+### SoRB (open loop planning) trajectory visualization
 ![Search comparison](./workdirs/uvfddpg_distributional1_ensemble3_rescale5/sorb_compare_search_openloop1.png)
 
 ```
