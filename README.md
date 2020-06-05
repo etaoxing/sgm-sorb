@@ -10,6 +10,18 @@ python run_PointEnv.py
 ## SoRB planning visualization
 ![Search comparison](./workdirs/uvfddpg_distributional1_ensemble3_rescale5/sorb_compare_search.png)
 
+```
+policy: no search
+start: [0.03271197 0.99020872]
+goal: [0.81310241 0.028764  ]
+steps: 300
+----------
+policy: search
+start: [0.03271197 0.99020872]
+goal: [0.81310241 0.028764  ]
+steps: 127
+```
+
 ## State graph visualization 
 
 1. SoRB state graph
