@@ -591,6 +591,14 @@ def plot_walls(walls):
     plt.yticks([])
 
 
+def set_env_difficulty(eval_env, difficulty):
+    assert 0 <= difficulty <= 1
+    max_goal_dist = eval_env.max_goal_dist
+    eval_env.set_sample_goal_args(prob_constraint=1,
+                                  min_dist=max(0, max_goal_dist * (difficulty - 0.05)),
+                                  max_dist=max_goal_dist * (difficulty + 0.05))
+
+
 if __name__ == "__main__":
 
     plt.figure(figsize=(12, 7))

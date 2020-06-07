@@ -36,22 +36,48 @@ class Collector:
         return rb_vec
 
     @classmethod
-    def eval_agent(cls, policy, eval_env, num_episodes):
-        e = 0
+    def eval_agent(cls, policy, eval_env, n, by_episode=True):
+        """
+        by_episode: if True, evals `n` episodes; otherwise, evals `n` environment steps
+        """
+
+        c = 0
         r = 0
         rewards = []
-
         state = eval_env.reset()
-        while e < num_episodes:
+        while c < n:
             action = policy.select_action(state)
             state, reward, done, info = eval_env.step(np.copy(action))
+            if not by_episode: c += 1
 
             r += reward
             if done:
                 rewards.append(r)
-                e += 1
+                if by_episode: c += 1
                 r = 0
         return rewards
+
+    @classmethod
+    def step_cleanup(cls, search_policy, eval_env, num_steps):
+        c = 0
+        while True:
+            goal = search_policy.get_goal_in_rb()
+            state = eval_env.reset()
+            state['goal'] = goal
+            done = False
+
+            while not done:
+                try:
+                    action = search_policy.select_action(state)
+                except Exception as e:
+                    raise e
+
+                state, reward, done, info = eval_env.step(np.copy(action))
+                state['goal'] = goal
+                c += 1
+
+                if done or search_policy.reached_final_waypoint:
+                    break
 
     @classmethod
     def get_trajectory(cls, policy, eval_env):

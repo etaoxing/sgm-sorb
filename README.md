@@ -41,10 +41,19 @@ steps: 111
 
 ### State graph visualization 
 
-1. SoRB state graph
+1. SoRB state graph (per critic in ensemble)
 ![SoRB state graph](./workdirs/uvfddpg_distributional1_ensemble3_rescale5/sorb_state_graph_ensemble.png)
 
-2. SGM state graph
+2. SGM state graph (ensembled)
+<!-- ![SGM state graph](./workdirs/uvfddpg_distributional1_ensemble3_rescale5/sgm_state_graph.png) -->
+<p align="center"><img src="./workdirs/uvfddpg_distributional1_ensemble3_rescale5/sgm_state_graph.png" width="275" alt="SGM state graph"></p>
+
+```
+Initial SparseSearchPolicy (|V|=202, |E|=1894) has success rate 0.20, evaluated in 88.82 seconds
+Filtered SparseSearchPolicy (|V|=202, |E|=986) has success rate 0.80, evaluated in 44.53 seconds
+Took 2500 cleanup steps in 119.46 seconds
+Cleaned SparseSearchPolicy (|V|=202, |E|=973) has success rate 0.80, evaluated in 57.41 seconds
+```
 
 ## Credits
 * https://github.com/scottemmons/sgm

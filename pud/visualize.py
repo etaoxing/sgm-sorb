@@ -1,15 +1,7 @@
 from pud.dependencies import *
 from pud.collector import Collector
-from pud.envs.simple_navigation_env import plot_walls
+from pud.envs.simple_navigation_env import plot_walls, set_env_difficulty
 from pud.utils import set_global_seed, set_env_seed
-
-def set_env_difficulty(eval_env, difficulty):
-    assert 0 <= difficulty <= 1
-    max_goal_dist = eval_env.max_goal_dist
-    eval_env.set_sample_goal_args(prob_constraint=1,
-                                  min_dist=max(0, max_goal_dist * (difficulty - 0.05)),
-                                  max_dist=max_goal_dist * (difficulty + 0.05))
-
 
 def visualize_trajectory(agent, eval_env, difficulty=0.5):
     set_env_difficulty(eval_env, difficulty)
@@ -77,6 +69,23 @@ def visualize_graph_ensemble(rb_vec, eval_env, pdist, cutoff=7, edges_to_display
                 if count < edges_to_display and pdist[col_index, i, j] < cutoff:
                     s_j = rb_vec[j]
                     plt.plot([s_i[0], s_j[0]], [s_i[1], s_j[1]], c='k', alpha=0.5)
+    plt.show()
+
+
+def visualize_full_graph(g, rb_vec, eval_env):
+    plt.figure(figsize=(6, 6))
+    plot_walls(eval_env.walls)
+    plt.scatter(rb_vec[g.nodes, 0], rb_vec[g.nodes, 1])
+
+    edges_to_plot = g.edges
+    edges_to_plot = np.array(list(edges_to_plot))
+
+    for i, j in edges_to_plot:
+        s_i = rb_vec[i]
+        s_j = rb_vec[j]
+        plt.plot([s_i[0], s_j[0]], [s_i[1], s_j[1]], c='k', alpha=0.5)
+
+    plt.title(f'|V|={g.number_of_nodes()}, |E|={len(edges_to_plot)}')
     plt.show()
 
 

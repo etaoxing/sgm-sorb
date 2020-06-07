@@ -116,9 +116,22 @@ elif True:
     # from pud.visualize import visualize_graph_ensemble
     # visualize_graph_ensemble(rb_vec, eval_env, pdist)
 
-    from pud.policies import SearchPolicy
-    search_policy = SearchPolicy(agent, rb_vec, pdist, open_loop=True)
-    eval_env.duration = 300 # We'll give the agent lots of time to try to find the goal.
+    # from pud.policies import SearchPolicy
+    # search_policy = SearchPolicy(agent, rb_vec, pdist, open_loop=True)
+    # eval_env.duration = 300 # We'll give the agent lots of time to try to find the goal.
+
+
+    # Sparse graphical memory
+    # 
+    from pud.policies import SparseSearchPolicy
+    search_policy = SparseSearchPolicy(agent, rb_vec, pdist, max_search_steps=10)
+    eval_env.duration = 300
+    #
+    from pud.runner import cleanup_and_eval_search_policy
+    (initial_g, initial_rb), (filtered_g, filtered_rb), (cleaned_g, cleaned_rb) = cleanup_and_eval_search_policy(search_policy, eval_env)
+    #
+    from pud.visualize import visualize_full_graph
+    visualize_full_graph(cleaned_g, cleaned_rb, eval_env)
 
     # Plot the search path found by the search policy
     # 
@@ -131,5 +144,5 @@ elif True:
     # leading to the goal. As before, the slider allows you to change the 
     # distance to the goal. Note that only the search policy is able to reach distant goals.
     #
-    from pud.visualize import visualize_compare_search
-    visualize_compare_search(agent, search_policy, eval_env, difficulty=0.9)
+    # from pud.visualize import visualize_compare_search
+    # visualize_compare_search(agent, search_policy, eval_env, difficulty=0.9)
