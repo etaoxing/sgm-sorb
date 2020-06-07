@@ -85,12 +85,9 @@ def cleanup_and_eval_search_policy(search_policy, eval_env, num_evals=10, diffic
     search_policy.reset_stats()
     success_rate, eval_time = eval_search_policy(search_policy, eval_env, num_evals=num_evals)
 
+    # Initial sparse graph
     print(f'Initial {search_policy} has success rate {success_rate:.2f}, evaluated in {eval_time:.2f} seconds')
     initial_g, initial_rb = search_policy.g.copy(), search_policy.rb_vec.copy()
-
-    # -------
-    # Cleanup
-    # -------
 
     # Filter search policy
     search_policy.filter_keep_k_nearest()
@@ -101,6 +98,7 @@ def cleanup_and_eval_search_policy(search_policy, eval_env, num_evals=10, diffic
     print(f'Filtered {search_policy} has success rate {success_rate:.2f}, evaluated in {eval_time:.2f} seconds')
     filtered_g, filtered_rb = search_policy.g.copy(), search_policy.rb_vec.copy()
 
+    # Cleanup steps
     num_cleanup_steps = 2500
     cleanup_time = take_cleanup_steps(search_policy, eval_env, num_cleanup_steps)
     print(f'Took {num_cleanup_steps} cleanup steps in {cleanup_time:.2f} seconds')

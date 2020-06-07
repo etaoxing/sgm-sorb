@@ -120,7 +120,6 @@ elif True:
     # search_policy = SearchPolicy(agent, rb_vec, pdist, open_loop=True)
     # eval_env.duration = 300 # We'll give the agent lots of time to try to find the goal.
 
-
     # Sparse graphical memory
     # 
     from pud.policies import SparseSearchPolicy

@@ -334,7 +334,7 @@ class SparseSearchPolicy(SearchPolicy):
 
         # add initial node
         cache_index = 0
-        self.g.add_node(0)
+        self.g.add_node(cache_index)
         sparse_rb_vec = np.array([self.rb_vec[cache_index]])
         sparse_pdist = self.get_cached_pairwise_dist(np.array([cache_index]), np.array([cache_index]))
         sparse_rb_variances = np.zeros((1))
