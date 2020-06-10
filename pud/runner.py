@@ -76,7 +76,8 @@ def take_cleanup_steps(search_policy, eval_env, num_cleanup_steps):
 
     search_policy.set_cleanup(True)
     cleanup_start = time.process_time()
-    Collector.eval_agent(search_policy, eval_env, num_cleanup_steps, by_episode=False)
+    # Collector.eval_agent(search_policy, eval_env, num_cleanup_steps, by_episode=False) # random goals in env
+    Collector.step_cleanup(search_policy, eval_env, num_cleanup_steps) # samples goals from nodes in state graph
     cleanup_end = time.process_time()
     search_policy.set_cleanup(False)
     cleanup_time = cleanup_end - cleanup_start
@@ -102,7 +103,7 @@ def cleanup_and_eval_search_policy(search_policy, eval_env, num_evals=10, diffic
     filtered_g, filtered_rb = search_policy.g.copy(), search_policy.rb_vec.copy()
 
     # Cleanup steps
-    num_cleanup_steps = 2500
+    num_cleanup_steps = int(1e4)
     cleanup_time = take_cleanup_steps(search_policy, eval_env, num_cleanup_steps)
     print(f'Took {num_cleanup_steps} cleanup steps in {cleanup_time:.2f} seconds')
 

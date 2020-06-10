@@ -60,23 +60,22 @@ class Collector:
     @classmethod
     def step_cleanup(cls, search_policy, eval_env, num_steps):
         c = 0
-        while True:
+        while c < num_steps:
             goal = search_policy.get_goal_in_rb()
             state = eval_env.reset()
-            state['goal'] = goal
             done = False
 
-            while not done:
+            while True:
+                state['goal'] = goal
                 try:
                     action = search_policy.select_action(state)
                 except Exception as e:
                     raise e
 
                 state, reward, done, info = eval_env.step(np.copy(action))
-                state['goal'] = goal
                 c += 1
 
-                if done or search_policy.reached_final_waypoint:
+                if done or c >= num_steps or search_policy.reached_final_waypoint:
                     break
 
     @classmethod

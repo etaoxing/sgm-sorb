@@ -49,10 +49,10 @@ steps: 111
 <p align="center"><img src="./workdirs/uvfddpg_distributional1_ensemble3_rescale5/sgm_state_graph.png" width="275" alt="SGM state graph"></p>
 
 ```
-Initial SparseSearchPolicy (|V|=202, |E|=1894) has success rate 0.20, evaluated in 88.82 seconds
-Filtered SparseSearchPolicy (|V|=202, |E|=986) has success rate 0.80, evaluated in 44.53 seconds
-Took 2500 cleanup steps in 119.46 seconds
-Cleaned SparseSearchPolicy (|V|=202, |E|=973) has success rate 0.80, evaluated in 57.41 seconds
+Initial SparseSearchPolicy (|V|=202, |E|=1894) has success rate 0.20, evaluated in 57.72 seconds
+Filtered SparseSearchPolicy (|V|=202, |E|=986) has success rate 0.80, evaluated in 34.39 seconds
+Took 10000 cleanup steps in 344.87 seconds
+Cleaned SparseSearchPolicy (|V|=202, |E|=955) has success rate 1.00, evaluated in 27.10 seconds
 ```
 
 ## Credits
