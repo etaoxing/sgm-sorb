@@ -55,7 +55,7 @@ def eval_agent(agent, eval_env, num_evals=10, eval_distances=[2, 5, 10]):
 
 
 def eval_search_policy(search_policy, eval_env, num_evals=10):
-    eval_start = time.process_time()
+    eval_start = time.perf_counter()
 
     successes = 0.
     for _ in range(num_evals):
@@ -65,7 +65,7 @@ def eval_search_policy(search_policy, eval_env, num_evals=10):
         except:
             pass
 
-    eval_end = time.process_time()
+    eval_end = time.perf_counter()
     eval_time = eval_end - eval_start
     success_rate = successes / num_evals
     return success_rate, eval_time
@@ -75,10 +75,10 @@ def take_cleanup_steps(search_policy, eval_env, num_cleanup_steps):
     set_env_difficulty(eval_env, 0.95)
 
     search_policy.set_cleanup(True)
-    cleanup_start = time.process_time()
+    cleanup_start = time.perf_counter()
     # Collector.eval_agent(search_policy, eval_env, num_cleanup_steps, by_episode=False) # random goals in env
     Collector.step_cleanup(search_policy, eval_env, num_cleanup_steps) # samples goals from nodes in state graph
-    cleanup_end = time.process_time()
+    cleanup_end = time.perf_counter()
     search_policy.set_cleanup(False)
     cleanup_time = cleanup_end - cleanup_start
     return cleanup_time
