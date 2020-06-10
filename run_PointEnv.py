@@ -107,13 +107,13 @@ elif True:
     # visualize_graph_ensemble(rb_vec, eval_env, pdist)
 
     # from pud.policies import SearchPolicy
-    # search_policy = SearchPolicy(agent, rb_vec, pdist, open_loop=True)
+    # search_policy = SearchPolicy(agent, rb_vec, pdist=pdist, open_loop=True)
     # eval_env.duration = 300 # We'll give the agent lots of time to try to find the goal.
 
     # Sparse graphical memory
     # 
     from pud.policies import SparseSearchPolicy
-    search_policy = SparseSearchPolicy(agent, rb_vec, pdist, max_search_steps=10)
+    search_policy = SparseSearchPolicy(agent, rb_vec, pdist=pdist, cache_pdist=True, max_search_steps=10)
     eval_env.duration = 300
     #
     from pud.runner import cleanup_and_eval_search_policy

@@ -370,7 +370,8 @@ class UVFDDPG(DDPG):
         dist_matrix = []
         for obs_index in range(len(obs_vec)):
             obs = obs_vec[obs_index]
-            obs_repeat_tensor = np.ones_like(goal_vec) * np.expand_dims(obs, 0)
+            # obs_repeat_tensor = np.ones_like(goal_vec) * np.expand_dims(obs, 0)
+            obs_repeat_tensor = np.repeat([obs], len(goal_vec), axis=0)
             state = {'observation': obs_repeat_tensor, 'goal': goal_vec}
             dist = self.get_dist_to_goal(state, aggregate=aggregate)
             dist_matrix.append(dist)

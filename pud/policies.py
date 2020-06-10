@@ -25,7 +25,7 @@ class SearchPolicy(BasePolicy):
     def __init__(self,
                  agent,
                  rb_vec,
-                 pdist,
+                 pdist=None,
                  aggregate='min',
                  max_search_steps=7,
                  open_loop=False,
@@ -92,17 +92,17 @@ class SearchPolicy(BasePolicy):
                     g.add_edge(i, j, weight=length)
         self.g = g
 
-    def get_pairwise_dist_to_rb(self, state):
+    def get_pairwise_dist_to_rb(self, state, masked=True):
         start_to_rb_dist = self.agent.get_pairwise_dist([state['observation']],
                                                         self.rb_vec,
                                                         aggregate=self.aggregate,
                                                         max_search_steps=self.max_search_steps,
-                                                        masked=True)
+                                                        masked=masked)
         rb_to_goal_dist  = self.agent.get_pairwise_dist(self.rb_vec,
                                                         [state['goal']],
                                                         aggregate=self.aggregate,
                                                         max_search_steps=self.max_search_steps,
-                                                        masked=True)
+                                                        masked=masked)
         return start_to_rb_dist, rb_to_goal_dist
 
     def get_closest_waypoint(self, state):
@@ -147,7 +147,7 @@ class SearchPolicy(BasePolicy):
         g2 = self.construct_planning_graph(state)
         try:
             self.stats['path_planning_attempts'] += 1
-            graph_search_start = time.process_time()
+            graph_search_start = time.perf_counter()
 
             if self.weighted_path_planning:
                 path = nx.shortest_path(g2, source='start', target='goal', weight='weight')
@@ -157,7 +157,7 @@ class SearchPolicy(BasePolicy):
             self.stats['path_planning_fails'] += 1
             raise RuntimeError(f'Failed to find path in graph (|V|={g2.number_of_nodes()}, |E|={g2.number_of_edges()})')
         finally:
-            graph_search_end = time.process_time()
+            graph_search_end = time.perf_counter()
             self.stats['graph_search_time'] += graph_search_end - graph_search_start
 
         edge_lengths = []
@@ -234,6 +234,8 @@ class SearchPolicy(BasePolicy):
 
 class SparseSearchPolicy(SearchPolicy):
     def __init__(self, *args,
+                 pdist=None,
+                 cache_pdist=True,
                  beta=0.05,
                  edge_cutoff=10,
                  norm_cutoff=0.05,
@@ -245,7 +247,13 @@ class SparseSearchPolicy(SearchPolicy):
                  no_waypoint_hopping=True,
                  **kwargs):
         """
+        Note: If beta!=0 and cache_pdist=False, then dynamic construction of the 
+        state graph will use updated embeddings to compute distances. 
+        Set cache_pdist=True to use the distances of the original observations.
+
         Args:
+            cache_pdist: if True, then uses `pdist` when building graph, 
+                         otherwise, compute distances with new embeddings
             beta: percentage assigned to newest embedding space observation
                   in exponential moving average / variance calculations
             edge_cutoff: draw directed edges between nodes when their qvalue
@@ -261,6 +269,9 @@ class SparseSearchPolicy(SearchPolicy):
                                  all edges with incoming start and goal nodes 
                                  that have distance less than `max_search_steps`
         """
+        self.cache_pdist = cache_pdist
+        if self.cache_pdist:
+            self.cached_pdist = pdist.copy()
         self.beta = beta
         self.edge_cutoff = edge_cutoff
         self.norm_cutoff = norm_cutoff
@@ -268,7 +279,7 @@ class SparseSearchPolicy(SearchPolicy):
         self.waypoint_consistency_cutoff = waypoint_consistency_cutoff
         self.k_nearest = k_nearest
         self.localize_to_nearest = localize_to_nearest
-        super().__init__(*args, open_loop=open_loop, no_waypoint_hopping=no_waypoint_hopping, **kwargs)
+        super().__init__(*args, pdist=pdist, open_loop=open_loop, no_waypoint_hopping=no_waypoint_hopping, **kwargs)
 
     def filter_keep_k_nearest(self):
         """
@@ -331,27 +342,37 @@ class SparseSearchPolicy(SearchPolicy):
                   in exponential moving average / variance calculations
         """
         self.g = nx.DiGraph()
+        embeddings_to_add = self.rb_vec.copy()
+        for i, embedding in enumerate(embeddings_to_add):
+            self.update_graph(embedding, cache_index=i)
 
-        # add initial node
-        cache_index = 0
-        self.g.add_node(cache_index)
-        sparse_rb_vec = np.array([self.rb_vec[cache_index]])
-        sparse_pdist = self.get_cached_pairwise_dist(np.array([cache_index]), np.array([cache_index]))
-        sparse_rb_variances = np.zeros((1))
-        cache_indices =  np.array([cache_index])
+    def update_graph(self, embedding, cache_index=None): # Merge with existing node or create new node
+        if self.cache_pdist: assert cache_index is not None
 
-        for cache_index in range(1, len(self.rb_vec)): 
-            # Merge with existing node or create new node
-            embedding = self.rb_vec[cache_index]
+        if self.g.number_of_nodes() == 0:
+            self.g.add_node(cache_index)
+            self.rb_vec = np.array([embedding])
+            self.rb_variances = np.zeros((1))
 
+            if self.cache_pdist:
+                self.pdist = self.get_cached_pairwise_dist(np.array([cache_index]), np.array([cache_index]))
+            else:
+                self.pdist = self.agent.get_pairwise_dist(self.rb_vec, aggregate=None)
+
+            if self.cache_pdist: self.cache_indices =  np.array([cache_index])
+        else:
             # Localize to nearest neighbors in embedding space
-            neighbor_indices = np.arange(len(sparse_rb_vec))[self.norm_consistency(embedding, sparse_rb_vec)]
+            neighbor_indices = np.arange(len(self.rb_vec))[self.norm_consistency(embedding, self.rb_vec)]
 
             # Get maximum distances (i.e., minimum qvalues)
-            embedding_to_rb = self.get_cached_pairwise_dist(np.array([cache_index]), cache_indices)
-            rb_to_embedding = self.get_cached_pairwise_dist(cache_indices, np.array([cache_index]))
+            if self.cache_pdist:
+                embedding_to_rb = self.get_cached_pairwise_dist(np.array([cache_index]), self.cache_indices)
+                rb_to_embedding = self.get_cached_pairwise_dist(self.cache_indices, np.array([cache_index]))
+            else:
+                embedding_to_rb = self.agent.get_pairwise_dist([embedding], self.rb_vec, aggregate=None)
+                rb_to_embedding = self.agent.get_pairwise_dist(self.rb_vec, [embedding], aggregate=None)
 
-            pdist_combined = np.max(sparse_pdist, axis=0)
+            pdist_combined = np.max(self.pdist, axis=0)
             embedding_to_rb_combined = np.max(embedding_to_rb, axis=0).flatten()
             rb_to_embedding_combined = np.max(rb_to_embedding, axis=0).flatten()
 
@@ -360,10 +381,10 @@ class SparseSearchPolicy(SearchPolicy):
             for neighbor in neighbor_indices:
                 # Merge if qvalues are consistent
                 if self.qvalue_consistency(neighbor, pdist_combined, embedding_to_rb_combined, rb_to_embedding_combined):
-                    difference_from_avg = embedding - sparse_rb_vec[neighbor]
-                    sparse_rb_vec[neighbor] = sparse_rb_vec[neighbor] + self.beta * difference_from_avg
-                    sparse_rb_variances[neighbor] = (1 - self.beta) * \
-                        (sparse_rb_variances[neighbor] + self.beta * np.sum(difference_from_avg ** 2))
+                    difference_from_avg = embedding - self.rb_vec[neighbor]
+                    self.rb_vec[neighbor] = self.rb_vec[neighbor] + self.beta * difference_from_avg
+                    self.rb_variances[neighbor] = (1 - self.beta) * \
+                        (self.rb_variances[neighbor] + self.beta * np.sum(difference_from_avg ** 2))
                     merged = True
                     break
 
@@ -382,19 +403,19 @@ class SparseSearchPolicy(SearchPolicy):
                 # The only qvalue distance we don't yet have is the new node to itself.
                 # Can concatenate qvalues we already have to save |V|^2 qvalue query.
                 # Used to update sparse_pdist
-                embedding_to_embedding = self.get_cached_pairwise_dist(np.array([cache_index]), 
-                                                                       np.array([cache_index]))
+                if self.cache_pdist:
+                    embedding_to_embedding = self.get_cached_pairwise_dist(np.array([cache_index]),
+                                                                           np.array([cache_index]))
+                else:
+                    embedding_to_embedding = self.agent.get_pairwise_dist([embedding], [embedding], aggregate=None)
 
                 # Add node to other attributes
-                sparse_rb_vec = np.concatenate((sparse_rb_vec, [embedding]), axis=0)
-                sparse_rb_variances = np.append(sparse_rb_variances, [0])
-                sparse_pdist = np.concatenate((sparse_pdist, embedding_to_rb), axis=1)
-                sparse_pdist = np.concatenate(
-                    (sparse_pdist, np.concatenate((rb_to_embedding, embedding_to_embedding), axis=1)), axis=2)
-                cache_indices = np.append(cache_indices, cache_index)
-
-        self.rb_vec = sparse_rb_vec
-        self.pdist = sparse_pdist
+                self.rb_vec = np.concatenate((self.rb_vec, [embedding]), axis=0)
+                self.rb_variances = np.append(self.rb_variances, [0])
+                self.pdist = np.concatenate((self.pdist, embedding_to_rb), axis=1)
+                self.pdist = np.concatenate(
+                    (self.pdist, np.concatenate((rb_to_embedding, embedding_to_embedding), axis=1)), axis=2)
+                if self.cache_pdist: self.cache_indices = np.append(self.cache_indices, cache_index)
 
     def get_cached_pairwise_dist(self, row_indices, col_indices):
         assert len(row_indices.shape) == len(col_indices.shape) == 1
@@ -402,10 +423,10 @@ class SparseSearchPolicy(SearchPolicy):
         col_entries = col_indices.shape[0]
         row_advanced_index = np.tile(row_indices, (col_entries, 1)).T
         col_advanced_index = np.tile(col_indices, (row_entries, 1))
-        if len(self.pdist.shape) == 2:
-            return self.pdist[row_advanced_index, col_advanced_index]
-        elif len(self.pdist.shape) == 3:
-            return self.pdist[:, row_advanced_index, col_advanced_index]
+        if len(self.cached_pdist.shape) == 2:
+            return self.cached_pdist[row_advanced_index, col_advanced_index]
+        elif len(self.cached_pdist.shape) == 3:
+            return self.cached_pdist[:, row_advanced_index, col_advanced_index]
         else:
             raise RuntimeError('Cached pdist has unrecognized shape')
 
