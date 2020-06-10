@@ -39,9 +39,12 @@ from pud.buffer import ReplayBuffer
 replay_buffer = ReplayBuffer(state_dim, action_dim, **cfg.replay_buffer)
 
 if False:
-    from pud.runner import train_eval
+    from pud.policies import GaussianPolicy
+    policy = GaussianPolicy(agent)
 
-    train_eval(agent,
+    from pud.runner import train_eval
+    train_eval(policy,
+               agent,
                replay_buffer,
                env,
                eval_env,

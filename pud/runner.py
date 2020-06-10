@@ -1,9 +1,9 @@
 from pud.dependencies import *
 from pud.collector import Collector
-from pud.policies import GaussianPolicy
 from pud.envs.simple_navigation_env import set_env_difficulty
 
 def train_eval(
+    policy,
     agent,
     replay_buffer,
     env,
@@ -17,7 +17,7 @@ def train_eval(
     opt_log_interval=100,
     eval_interval=10000,
 ):
-    collector = Collector(GaussianPolicy(agent), replay_buffer, env, initial_collect_steps=initial_collect_steps)
+    collector = Collector(policy, replay_buffer, env, initial_collect_steps=initial_collect_steps)
     collector.step(collector.initial_collect_steps)
     for i in range(1, num_iterations + 1):
         collector.step(collect_steps)
