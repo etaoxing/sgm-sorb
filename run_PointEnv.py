@@ -1,28 +1,23 @@
 from pud.dependencies import *
-from pud.utils import set_global_seed, set_env_seed
+from pud.utils import set_global_seed, set_env_seed, AttrDict
 
-max_episode_steps = 20
-env_name = 'FourRooms'  # Choose one of the environments shown above. 
-resize_factor = 5  # Inflate the environment to increase the difficulty.
-# resize_factor = 1
-thin = False # If True, resize by expanding open space, not walls, to make walls thin
-desc_name = "thinned_" + env_name.lower() if thin else env_name.lower()
-seed = 0
+cfg_file = sys.argv[-1]
+cfg = AttrDict(**eval(open(cfg_file, 'r').read()))
 
-set_global_seed(seed)
+set_global_seed(cfg.seed)
 
 from pud.envs.simple_navigation_env import env_load_fn
-env = env_load_fn(env_name, max_episode_steps,
-                     resize_factor=resize_factor,
+env = env_load_fn(cfg.env.env_name, cfg.env.max_episode_steps,
+                     resize_factor=cfg.env.resize_factor,
                      terminate_on_timeout=False,
-                     thin=thin)
-set_env_seed(env, seed + 1)
+                     thin=cfg.env.thin)
+set_env_seed(env, cfg.seed + 1)
 
-eval_env = env_load_fn(env_name, max_episode_steps,
-                          resize_factor=resize_factor,
-                          terminate_on_timeout=True,
-                          thin=thin)
-set_env_seed(eval_env, seed + 2)
+eval_env = env_load_fn(cfg.env.env_name, cfg.env.max_episode_steps,
+                       resize_factor=cfg.env.resize_factor,
+                       terminate_on_timeout=True,
+                       thin=cfg.env.thin)
+set_env_seed(eval_env, cfg.seed + 2)
 
 from pud.ddpg import UVFDDPG
 state_dim = env.observation_space['observation'].shape[0]
@@ -35,37 +30,29 @@ agent = UVFDDPG(
     int(2 * state_dim), # concatenating obs and goal
     action_dim,
     max_action,
-    discount=1,
-    max_episode_steps=max_episode_steps,
-    ensemble_size=3,
-    use_distributional_rl=True,
-    targets_update_interval=5, # tfagents default
-    tau=0.05,
+    **cfg.agent,
 )
 
 print(agent)
 
 from pud.buffer import ReplayBuffer
-replay_buffer = ReplayBuffer(state_dim, action_dim, max_size=1000)
+replay_buffer = ReplayBuffer(state_dim, action_dim, **cfg.replay_buffer)
 
 if False:
     from pud.runner import train_eval
-    
+
     train_eval(agent,
                replay_buffer,
                env,
                eval_env,
-               initial_collect_steps=1000,
-               eval_interval=1000,
-               num_eval_episodes=10,
-               num_iterations=30000,
+               **cfg.runner,
               )
     torch.save(agent.state_dict(), 'agent.pth')
 elif True:
     ckpt_file = os.path.join('workdirs', 'uvfddpg_distributional1_ensemble3_rescale5', 'agent.pth')
     agent.load_state_dict(torch.load(ckpt_file))
     agent.eval()
-    
+
     # from pud.visualize import visualize_trajectory
     # eval_env.duration = 100 # We'll give the agent lots of time to try to find the goal.
     # visualize_trajectory(agent, eval_env, difficulty=0.5)

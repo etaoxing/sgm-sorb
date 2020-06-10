@@ -10,6 +10,9 @@ def train_eval(
     eval_env,
     num_iterations=int(1e6),
     initial_collect_steps=1000,
+    collect_steps=1,
+    opt_steps=1,
+    batch_size_opt=64,
     num_eval_episodes=10,
     opt_log_interval=100,
     eval_interval=10000,
@@ -17,9 +20,9 @@ def train_eval(
     collector = Collector(GaussianPolicy(agent), replay_buffer, env, initial_collect_steps=initial_collect_steps)
     collector.step(collector.initial_collect_steps)
     for i in range(1, num_iterations + 1):
-        collector.step(2)
+        collector.step(collect_steps)
         agent.train()
-        opt_info = agent.optimize(replay_buffer, iterations=1, batch_size=64)
+        opt_info = agent.optimize(replay_buffer, iterations=opt_steps, batch_size=batch_size_opt)
 
         if i % opt_log_interval == 0:
             print(f'iteration = {i}, opt_info = {opt_info}')

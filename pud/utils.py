@@ -30,3 +30,17 @@ def set_global_seed(seed):
 def set_env_seed(env, seed):
     env.seed(seed)
     env.action_space.seed(seed) # https://harald.co/2019/07/30/reproducibility-issues-using-openai-gym/
+
+
+def from_nested_dict(data):
+    if not isinstance(data, dict):
+        return data
+    else:
+        return AttrDict({key: from_nested_dict(data[key])
+                            for key in data})
+class AttrDict(dict):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.__dict__ = self
+        for key in self.keys():
+            self[key] = from_nested_dict(self[key])

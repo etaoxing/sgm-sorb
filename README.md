@@ -4,7 +4,7 @@
 ```
 pip install -e .
 
-python run_PointEnv.py
+python run_PointEnv.py configs/config_PointEnv.py
 ```
 
 ## Results
