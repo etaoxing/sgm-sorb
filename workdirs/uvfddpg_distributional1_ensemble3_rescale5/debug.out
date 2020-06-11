@@ -18,7 +18,7 @@
             'num_iterations': 30000,
             'opt_steps': 1},
  'seed': 0}
-state dim: 2, action dim: 2, max action: 1.0
+obs dim: 2, goal dim: 2, state dim: 4, action dim: 2, max action: 1.0
 UVFDDPG(
   (actor): GoalConditionedActor(
     (l1): Linear(in_features=4, out_features=256, bias=True)

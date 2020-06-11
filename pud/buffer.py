@@ -1,15 +1,15 @@
 from pud.dependencies import *
 
 class ReplayBuffer:
-    def __init__(self, state_dim, action_dim, max_size=int(1e6)):
+    def __init__(self, obs_dim, goal_dim, action_dim, max_size=int(1e6)):
         self.max_size = max_size
         self.ptr = 0
         self.size = 0
 
-        self.observation = np.zeros((max_size, state_dim))
-        self.goal = np.zeros((max_size, state_dim))
-        self.next_observation = np.zeros((max_size, state_dim))
-        self.next_goal = np.zeros((max_size, state_dim))
+        self.observation = np.zeros((max_size, obs_dim))
+        self.goal = np.zeros((max_size, goal_dim))
+        self.next_observation = np.zeros((max_size, obs_dim))
+        self.next_goal = np.zeros((max_size, goal_dim))
         self.action = np.zeros((max_size, action_dim))
         self.reward = np.zeros((max_size, 1))
         self.done = np.zeros((max_size, 1))

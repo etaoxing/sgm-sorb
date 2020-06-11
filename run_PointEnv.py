@@ -19,14 +19,16 @@ eval_env = env_load_fn(cfg.env.env_name, cfg.env.max_episode_steps,
                        thin=cfg.env.thin)
 set_env_seed(eval_env, cfg.seed + 2)
 
-state_dim = env.observation_space['observation'].shape[0]
+obs_dim = env.observation_space['observation'].shape[0]
+goal_dim = obs_dim
+state_dim = obs_dim + goal_dim
 action_dim = env.action_space.shape[0]
 max_action = float(env.action_space.high[0])
-print(f'state dim: {state_dim}, action dim: {action_dim}, max action: {max_action}')
+print(f'obs dim: {obs_dim}, goal dim: {goal_dim}, state dim: {state_dim}, action dim: {action_dim}, max action: {max_action}')
 
 from pud.ddpg import UVFDDPG
 agent = UVFDDPG(
-    int(2 * state_dim), # concatenating obs and goal
+    state_dim, # concatenating obs and goal
     action_dim,
     max_action,
     **cfg.agent,
@@ -34,7 +36,7 @@ agent = UVFDDPG(
 print(agent)
 
 from pud.buffer import ReplayBuffer
-replay_buffer = ReplayBuffer(state_dim, action_dim, **cfg.replay_buffer)
+replay_buffer = ReplayBuffer(obs_dim, goal_dim, action_dim, **cfg.replay_buffer)
 
 if False:
     from pud.policies import GaussianPolicy
