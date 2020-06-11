@@ -1,6 +1,6 @@
 {'agent': {'discount': 1,
            'ensemble_size': 3,
-           'max_episode_steps': 20,
+           'num_bins': 20,
            'targets_update_interval': 5,
            'tau': 0.05,
            'use_distributional_rl': True},

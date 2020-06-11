@@ -229,17 +229,17 @@ class EnsembledCritic(nn.Module):
 class UVFDDPG(DDPG):
     def __init__(self, *args,
                  discount=1,
-                 max_episode_steps=1,
+                 num_bins=1,
                  use_distributional_rl=False,
                  ensemble_size=1,
                  CriticCls=GoalConditionedCritic,
                  **kwargs):
-        self.max_episode_steps = max_episode_steps # Used for determining the number of bins for distributional RL.
+        self.num_bins = num_bins # used if distributional_rl=True
         self.use_distributional_rl = use_distributional_rl
         self.ensemble_size = ensemble_size
 
         if self.use_distributional_rl:
-            CriticCls = functools.partial(CriticCls, output_dim=self.max_episode_steps)
+            CriticCls = functools.partial(CriticCls, output_dim=self.num_bins)
             assert discount == 1
 
         super().__init__(*args, discount=discount, ActorCls=GoalConditionedActor, CriticCls=CriticCls, **kwargs)
@@ -277,7 +277,7 @@ class UVFDDPG(DDPG):
                 # NOTE: We want to compute the value of each bin, which is the
                 # negative distance. Without properly negating this, the actor is
                 # optimized to take the *worst* actions.
-                neg_bin_range = -torch.arange(1, self.max_episode_steps + 1, dtype=torch.float)
+                neg_bin_range = -torch.arange(1, self.num_bins + 1, dtype=torch.float)
                 tiled_bin_range = neg_bin_range.unsqueeze(0).repeat(batch_size, 1)
                 assert q_probs.shape == tiled_bin_range.shape
                 # Take the inner product between these two tensors
@@ -298,7 +298,7 @@ class UVFDDPG(DDPG):
         if not self.use_distributional_rl:
             # Clip the q values if not using distributional RL. If using
             # distributional RL, the q values are implicitly clipped.
-            min_q_value = -1.0 * self.max_episode_steps
+            min_q_value = -1.0 * self.num_bins
             max_q_value = 0.0
             expected_q_values = torch.clamp(expected_q_values, min_q_value, max_q_value)
 
@@ -318,7 +318,7 @@ class UVFDDPG(DDPG):
                 # Compute distributional td targets
                 target_q_probs = F.softmax(target_q, dim=1)
                 batch_size = target_q_probs.shape[0]
-                one_hot = torch.zeros(batch_size, self.max_episode_steps)
+                one_hot = torch.zeros(batch_size, self.num_bins)
                 one_hot[:, 0] = 1
 
                 # Calculate the shifted probabilities

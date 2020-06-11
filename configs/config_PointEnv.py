@@ -17,10 +17,10 @@ dict(
         eval_interval=1000,
     ),
     agent=dict(
-        max_episode_steps=20,
         discount=1,
-        ensemble_size=3,
+        num_bins=20, # equal to max_episode_steps
         use_distributional_rl=True,
+        ensemble_size=3,
         targets_update_interval=5, # tfagents default
         tau=0.05,
     ),
