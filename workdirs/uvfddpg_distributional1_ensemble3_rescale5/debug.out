@@ -1,3 +1,23 @@
+{'agent': {'discount': 1,
+           'ensemble_size': 3,
+           'max_episode_steps': 20,
+           'targets_update_interval': 5,
+           'tau': 0.05,
+           'use_distributional_rl': True},
+ 'ckpt_dir': './workdirs/uvfddpg_distributional1_ensemble3_rescale5/',
+ 'env': {'env_name': 'FourRooms',
+         'max_episode_steps': 20,
+         'resize_factor': 5,
+         'thin': False},
+ 'replay_buffer': {'max_size': 1000},
+ 'runner': {'batch_size_opt': 64,
+            'collect_steps': 2,
+            'eval_interval': 1000,
+            'initial_collect_steps': 1000,
+            'num_eval_episodes': 10,
+            'num_iterations': 30000,
+            'opt_steps': 1},
+ 'seed': 0}
 state dim: 2, action dim: 2, max action: 1.0
 UVFDDPG(
   (actor): GoalConditionedActor(

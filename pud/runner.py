@@ -13,6 +13,7 @@ def train_eval(
     collect_steps=1,
     opt_steps=1,
     batch_size_opt=64,
+    eval_func=lambda agent, eval_env: None,
     num_eval_episodes=10,
     opt_log_interval=100,
     eval_interval=10000,
@@ -30,11 +31,11 @@ def train_eval(
         if i % eval_interval == 0:
             agent.eval()
             print(f'evaluating iteration = {i}')
-            eval_agent(agent, eval_env)
+            eval_func(agent, eval_env)
             print('-' * 10)
 
 
-def eval_agent(agent, eval_env, num_evals=10, eval_distances=[2, 5, 10]):
+def eval_pointenv_dists(agent, eval_env, num_evals=10, eval_distances=[2, 5, 10]):
     for dist in eval_distances:
         eval_env.set_sample_goal_args(prob_constraint=1, min_dist=dist, max_dist=dist) # NOTE: samples goal distances in [min_dist, max_dist] closed interval
         returns = Collector.eval_agent(agent, eval_env, num_evals)

@@ -3,7 +3,7 @@ from pud.utils import set_global_seed, set_env_seed, AttrDict
 
 cfg_file = sys.argv[-1]
 cfg = AttrDict(**eval(open(cfg_file, 'r').read()))
-
+print(cfg)
 set_global_seed(cfg.seed)
 
 from pud.envs.simple_navigation_env import env_load_fn
@@ -19,20 +19,18 @@ eval_env = env_load_fn(cfg.env.env_name, cfg.env.max_episode_steps,
                        thin=cfg.env.thin)
 set_env_seed(eval_env, cfg.seed + 2)
 
-from pud.ddpg import UVFDDPG
 state_dim = env.observation_space['observation'].shape[0]
 action_dim = env.action_space.shape[0]
 max_action = float(env.action_space.high[0])
-
 print(f'state dim: {state_dim}, action dim: {action_dim}, max action: {max_action}')
 
+from pud.ddpg import UVFDDPG
 agent = UVFDDPG(
     int(2 * state_dim), # concatenating obs and goal
     action_dim,
     max_action,
     **cfg.agent,
 )
-
 print(agent)
 
 from pud.buffer import ReplayBuffer
@@ -42,17 +40,18 @@ if False:
     from pud.policies import GaussianPolicy
     policy = GaussianPolicy(agent)
 
-    from pud.runner import train_eval
+    from pud.runner import train_eval, eval_pointenv_dists
     train_eval(policy,
                agent,
                replay_buffer,
                env,
                eval_env,
+               eval_func=eval_pointenv_dists,
                **cfg.runner,
               )
-    torch.save(agent.state_dict(), 'agent.pth')
+    torch.save(agent.state_dict(), os.path.join(cfg.ckpt_dir, 'agent.pth'))
 elif True:
-    ckpt_file = os.path.join('workdirs', 'uvfddpg_distributional1_ensemble3_rescale5', 'agent.pth')
+    ckpt_file = os.path.join(cfg.ckpt_dir, 'agent.pth')
     agent.load_state_dict(torch.load(ckpt_file))
     agent.eval()
 

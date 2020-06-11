@@ -32,6 +32,7 @@ def set_env_seed(env, seed):
     env.action_space.seed(seed) # https://harald.co/2019/07/30/reproducibility-issues-using-openai-gym/
 
 
+import pprint
 def from_nested_dict(data):
     if not isinstance(data, dict):
         return data
@@ -44,3 +45,6 @@ class AttrDict(dict):
         self.__dict__ = self
         for key in self.keys():
             self[key] = from_nested_dict(self[key])
+
+    def __str__(self):
+        return pprint.pformat(self.__dict__)
