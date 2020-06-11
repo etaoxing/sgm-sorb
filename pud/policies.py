@@ -270,8 +270,6 @@ class SparseSearchPolicy(SearchPolicy):
                                  that have distance less than `max_search_steps`
         """
         self.cache_pdist = cache_pdist
-        if self.cache_pdist:
-            self.cached_pdist = pdist.copy()
         self.beta = beta
         self.edge_cutoff = edge_cutoff
         self.norm_cutoff = norm_cutoff
@@ -341,10 +339,16 @@ class SparseSearchPolicy(SearchPolicy):
             beta: percentage assigned to newest embedding space observation
                   in exponential moving average / variance calculations
         """
+        if self.cache_pdist:
+            self.cached_pdist = self.pdist.copy()
+
         self.g = nx.DiGraph()
         embeddings_to_add = self.rb_vec.copy()
         for i, embedding in enumerate(embeddings_to_add):
             self.update_graph(embedding, cache_index=i)
+
+        self.cache_pdist = False
+        self.cached_pdist = None
 
     def update_graph(self, embedding, cache_index=None): # Merge with existing node or create new node
         if self.cache_pdist: assert cache_index is not None
