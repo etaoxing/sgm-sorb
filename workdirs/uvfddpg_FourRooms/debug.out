@@ -4,7 +4,7 @@
            'targets_update_interval': 5,
            'tau': 0.05,
            'use_distributional_rl': True},
- 'ckpt_dir': './workdirs/uvfddpg_distributional1_ensemble3_rescale5/',
+ 'ckpt_dir': './workdirs/uvfddpg_FourRooms/',
  'env': {'env_name': 'FourRooms',
          'max_episode_steps': 20,
          'resize_factor': 5,

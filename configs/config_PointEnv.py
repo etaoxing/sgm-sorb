@@ -27,5 +27,5 @@ dict(
     replay_buffer=dict(
         max_size=1000,
     ),
-    ckpt_dir='./workdirs/uvfddpg_distributional1_ensemble3_rescale5/',
+    ckpt_dir='./workdirs/uvfddpg_FourRooms/',
 )

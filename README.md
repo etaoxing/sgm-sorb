@@ -10,7 +10,7 @@ python run_PointEnv.py configs/config_PointEnv.py
 ## Results
 
 ### SoRB (re-planning with closest waypoint) trajectory visualization
-![Search comparison](./workdirs/uvfddpg_distributional1_ensemble3_rescale5/sorb_compare_search_openloop0.png)
+![Search comparison](./workdirs/uvfddpg_FourRooms/sorb_compare_search_openloop0.png)
 
 ```
 policy: no search
@@ -25,7 +25,7 @@ steps: 127
 ```
 
 ### SoRB (open loop planning) trajectory visualization
-![Search comparison](./workdirs/uvfddpg_distributional1_ensemble3_rescale5/sorb_compare_search_openloop1.png)
+![Search comparison](./workdirs/uvfddpg_FourRooms/sorb_compare_search_openloop1.png)
 
 ```
 policy: no search
@@ -42,11 +42,11 @@ steps: 111
 ### State graph visualization 
 
 1. SoRB state graph (per critic in ensemble)
-![SoRB state graph](./workdirs/uvfddpg_distributional1_ensemble3_rescale5/sorb_state_graph_ensemble.png)
+![SoRB state graph](./workdirs/uvfddpg_FourRooms/sorb_state_graph_ensemble.png)
 
 2. SGM state graph (ensembled)
-<!-- ![SGM state graph](./workdirs/uvfddpg_distributional1_ensemble3_rescale5/sgm_state_graph.png) -->
-<p align="center"><img src="./workdirs/uvfddpg_distributional1_ensemble3_rescale5/sgm_state_graph.png" width="275" alt="SGM state graph"></p>
+<!-- ![SGM state graph](./workdirs/uvfddpg_FourRooms/sgm_state_graph.png) -->
+<p align="center"><img src="./workdirs/uvfddpg_FourRooms/sgm_state_graph.png" width="275" alt="SGM state graph"></p>
 
 ```
 Initial SparseSearchPolicy (|V|=202, |E|=1894) has success rate 0.20, evaluated in 14.26 seconds
