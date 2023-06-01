@@ -331,7 +331,7 @@ class PointEnv(gym.Env):
         state_index = np.random.choice(num_candidate_states)
         state = np.array([candidate_states[0][state_index],
                           candidate_states[1][state_index]],
-                         dtype=np.float)
+                         dtype=np.float32)
         state += np.random.uniform(size=2)
         assert not self._is_blocked(state)
         return state
@@ -349,7 +349,7 @@ class PointEnv(gym.Env):
         return self._apsp[i1, j1, i2, j2]
 
     def _discretize_state(self, state, resolution=1.0):
-        (i, j) = np.floor(resolution * state).astype(np.int)
+        (i, j) = np.floor(resolution * state).astype(np.int64)
         # Round down to the nearest cell if at the boundary.
         if i == self._height:
             i -= 1
@@ -413,7 +413,7 @@ class PointEnv(gym.Env):
                         g.add_edge((i, j), (i + di, j + dj))
 
         # dist[i, j, k, l] is path from (i, j) -> (k, l)
-        dist = np.full((height, width, height, width), np.float('inf'))
+        dist = np.full((height, width, height, width), np.float32('inf'))
         for ((i1, j1), dist_dict) in nx.shortest_path_length(g):
             for ((i2, j2), d) in dist_dict.items():
                 dist[i1, j1, i2, j2] = d
@@ -518,7 +518,7 @@ class GoalConditionedPointWrapper(gym.Wrapper):
         goal_index = np.random.choice(num_candidate_states)
         goal = np.array([candidate_states[0][goal_index],
                          candidate_states[1][goal_index]],
-                        dtype=np.float)
+                        dtype=np.float32)
         goal += np.random.uniform(size=2)
         dist_to_goal = self.env._get_distance(obs, goal)
         assert min_dist <= dist_to_goal <= max_dist
